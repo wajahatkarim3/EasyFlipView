@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,8 +11,32 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.wajahatkarim3.easyflipview.demo.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/easyFlipView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        app:flipOnTouch="true"
+        app:flipDuration="500"
+        app:flipEnabled="true">
+
+        <TextView
+            android:text="Back Side"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="@color/colorAccent"/>
+
+        <TextView
+            android:text="Front Side"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="@color/colorPrimary"/>
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+</LinearLayout>
