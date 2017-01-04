@@ -9,6 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/windowBackgroundColor"
+    android:orientation="vertical"
     tools:context="com.wajahatkarim3.easyflipview.demo.MainActivity">
 
     <com.wajahatkarim3.easyflipview.EasyFlipView
@@ -19,24 +21,37 @@
         app:flipDuration="500"
         app:flipEnabled="true">
 
-        <TextView
-            android:text="Back Side"
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:textSize="30sp"
-            android:textColor="@android:color/white"
             android:gravity="center"
-            android:background="@color/colorAccent"/>
+            android:src="@drawable/card_back"
+            />
 
-        <TextView
-            android:text="Front Side"
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:textSize="30sp"
-            android:textColor="@android:color/white"
             android:gravity="center"
-            android:background="@color/colorPrimary"/>
+            android:src="@drawable/card_front"
+            />
 
     </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/easyFlipView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:flipOnTouch="true"
+        app:flipDuration="500"
+        app:flipEnabled="true">
+
+        <include layout="@layout/flash_card_layout_back"/>
+
+        <include layout="@layout/flash_card_layout_front" />
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
 
 </LinearLayout>

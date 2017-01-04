@@ -99,7 +99,7 @@ public class EasyFlipView extends FrameLayout {
         mCardBackLayout.setCameraDistance(scale);
     }
 
-    public void flipCard() {
+    public void flipTheView() {
 
         if (!flipEnabled)
             return;
@@ -138,12 +138,14 @@ public class EasyFlipView extends FrameLayout {
                     float MAX_CLICK_DISTANCE = 0.5f;
                     if(dx < MAX_CLICK_DISTANCE && dy < MAX_CLICK_DISTANCE && dx >= 0 && dy >= 0)
                     {
-                        flipCard();
+                        flipTheView();
                     }
                     return true;
             }
         }
-
+        else {
+            return super.onTouchEvent(event);
+        }
         return false;
     }
 
