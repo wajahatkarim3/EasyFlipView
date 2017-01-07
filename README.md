@@ -8,7 +8,7 @@ A quick and easy flip view through which you can create views with two sides lik
 
 Demo
 ====
-Install [Demo](https://github.com/wajahatkarim3/EasyFlipView/blob/master/Demo_v1.0.0.apk) app or APK from [Releases](https://github.com/wajahatkarim3/EasyFlipView/releases) on your device and click on any card to flip it!
+Install [Demo](https://github.com/wajahatkarim3/EasyFlipView/releases/download/1.0.0/EasyFlipView-Demo_v1.0.0.apk) app or APK from [Releases](https://github.com/wajahatkarim3/EasyFlipView/releases) on your device and click on any card to flip it!
 
 Installation
 ============
