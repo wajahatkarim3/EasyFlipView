@@ -14,11 +14,11 @@ import android.widget.FrameLayout;
 /**
  * A quick and easy flip view through which you can create views with two sides like credit cards, poker cards, flash cards etc.
  *
- * Add <com.wajahatkarim3.easyflipview.EasyFlipView/> into your XML layouts with two direct children views and you are done!
+ * Add com.wajahatkarim3.easyflipview.EasyFlipView into your XML layouts with two direct children views and you are done!
  * For more information, check http://github.com/wajahatkarim3/EasyFlipView
  *
  * @author Wajahat Karim (http://wajahatkarim.com)
- * @version 1.0.0 01/05/2017
+ * @version 1.0.1 01/11/2017
  */
 public class EasyFlipView extends FrameLayout {
 
@@ -200,7 +200,7 @@ public class EasyFlipView extends FrameLayout {
 
     /**
      * Whether view is set to flip on touch or not.
-     * @return
+     * @return true or false
      */
     public boolean isFlipOnTouch() {
         return flipOnTouch;
@@ -216,7 +216,7 @@ public class EasyFlipView extends FrameLayout {
 
     /**
      * Returns duration of flip in milliseconds!
-     * @return
+     * @return duration in milliseconds
      */
     public int getFlipDuration() {
         return flipDuration;
@@ -224,7 +224,7 @@ public class EasyFlipView extends FrameLayout {
 
     /**
      * Sets the flip duration (in milliseconds)
-     * @param flipDuration
+     * @param flipDuration duration in milliseconds
      */
     public void setFlipDuration(int flipDuration) {
         this.flipDuration = flipDuration;
@@ -234,7 +234,7 @@ public class EasyFlipView extends FrameLayout {
 
     /**
      * Returns whether flip is enabled or not!
-     * @return
+     * @return true or false
      */
     public boolean isFlipEnabled() {
         return flipEnabled;
@@ -242,7 +242,7 @@ public class EasyFlipView extends FrameLayout {
 
     /**
      * Enable / Disable flip view.
-     * @param flipEnabled
+     * @param flipEnabled true or false
      */
     public void setFlipEnabled(boolean flipEnabled) {
         this.flipEnabled = flipEnabled;
@@ -250,7 +250,7 @@ public class EasyFlipView extends FrameLayout {
 
     /**
      * Returns which flip state is currently on of the flip view.
-     * @return
+     * @return current state of flip view
      */
     public FlipState getCurrentFlipState()
     {
@@ -259,7 +259,7 @@ public class EasyFlipView extends FrameLayout {
 
     /**
      * Returns true if the front side of flip view is visible.
-     * @return
+     * @return true if the front side of flip view is visible.
      */
     public boolean isFrontSide()
     {
@@ -268,7 +268,7 @@ public class EasyFlipView extends FrameLayout {
 
     /**
      * Returns true if the back side of flip view is visible.
-     * @return
+     * @return true if the back side of flip view is visible.
      */
     public boolean isBackSide()
     {
