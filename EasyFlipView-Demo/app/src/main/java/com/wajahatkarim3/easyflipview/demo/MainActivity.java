@@ -20,11 +20,5 @@ public class MainActivity extends AppCompatActivity {
         easyFlipView.setFlipEnabled(true);
         easyFlipView.setFlipOnTouch(true);
 
-
-    }
-
-    public void flipCardMethod(View view)
-    {
-        //((EasyFlipView) view).flipCard();
     }
 }

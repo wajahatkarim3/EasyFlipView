@@ -26,6 +26,11 @@ public class EasyFlipView extends FrameLayout {
 
     public static final int DEFAULT_FLIP_DURATION = 400;
 
+    public enum FlipState {
+        FRONT_SIDE,
+        BACK_SIDE
+    }
+
     private AnimatorSet mSetRightOut;
     private AnimatorSet mSetLeftIn;
     private boolean mIsBackVisible = false;
@@ -39,6 +44,8 @@ public class EasyFlipView extends FrameLayout {
     private Context context;
     private float x1;
     private float y1;
+
+    private FlipState mFlipState = FlipState.FRONT_SIDE;
 
     public EasyFlipView(Context context) {
         super(context);
@@ -125,13 +132,40 @@ public class EasyFlipView extends FrameLayout {
             mSetRightOut.start();
             mSetLeftIn.start();
             mIsBackVisible = true;
+            mFlipState = FlipState.BACK_SIDE;
         } else {
             mSetRightOut.setTarget(mCardBackLayout);
             mSetLeftIn.setTarget(mCardFrontLayout);
             mSetRightOut.start();
             mSetLeftIn.start();
             mIsBackVisible = false;
+            mFlipState = FlipState.FRONT_SIDE;
         }
+    }
+
+    /**
+     * Flip the view for one side with or without animation.
+     * @param withAnimation true means flip view with animation otherwise without animation.
+     */
+    public void flipTheView(boolean withAnimation)
+    {
+        if (withAnimation == false)
+        {
+            mSetLeftIn.setDuration(0);
+            mSetRightOut.setDuration(0);
+            boolean oldFlipEnabled = flipEnabled;
+            flipEnabled = true;
+
+            flipTheView();
+
+            mSetLeftIn.setDuration(flipDuration);
+            mSetRightOut.setDuration(flipDuration);
+            flipEnabled = oldFlipEnabled;
+        }
+        else {
+            flipTheView();
+        }
+
     }
 
     @Override
@@ -164,29 +198,80 @@ public class EasyFlipView extends FrameLayout {
         return false;
     }
 
+    /**
+     * Whether view is set to flip on touch or not.
+     * @return
+     */
     public boolean isFlipOnTouch() {
         return flipOnTouch;
     }
 
+    /**
+     * Set whether view should be flipped on touch or not!
+     * @param flipOnTouch value (true or false)
+     */
     public void setFlipOnTouch(boolean flipOnTouch) {
         this.flipOnTouch = flipOnTouch;
     }
 
+    /**
+     * Returns duration of flip in milliseconds!
+     * @return
+     */
     public int getFlipDuration() {
         return flipDuration;
     }
 
+    /**
+     * Sets the flip duration (in milliseconds)
+     * @param flipDuration
+     */
     public void setFlipDuration(int flipDuration) {
         this.flipDuration = flipDuration;
         mSetRightOut.setDuration(flipDuration);
         mSetLeftIn.setDuration(flipDuration);
     }
 
+    /**
+     * Returns whether flip is enabled or not!
+     * @return
+     */
     public boolean isFlipEnabled() {
         return flipEnabled;
     }
 
+    /**
+     * Enable / Disable flip view.
+     * @param flipEnabled
+     */
     public void setFlipEnabled(boolean flipEnabled) {
         this.flipEnabled = flipEnabled;
+    }
+
+    /**
+     * Returns which flip state is currently on of the flip view.
+     * @return
+     */
+    public FlipState getCurrentFlipState()
+    {
+        return mFlipState;
+    }
+
+    /**
+     * Returns true if the front side of flip view is visible.
+     * @return
+     */
+    public boolean isFrontSide()
+    {
+        return (mFlipState==FlipState.FRONT_SIDE);
+    }
+
+    /**
+     * Returns true if the back side of flip view is visible.
+     * @return
+     */
+    public boolean isBackSide()
+    {
+        return (mFlipState==FlipState.BACK_SIDE);
     }
 }
