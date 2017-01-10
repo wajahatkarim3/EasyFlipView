@@ -23,7 +23,7 @@ dependencies {
 }
 ```
 
-Or add DBFlowManager as a new dependency inside your pom.xml
+Or add EasyFlipView as a new dependency inside your pom.xml
 
 ```xml
 <dependency> 
