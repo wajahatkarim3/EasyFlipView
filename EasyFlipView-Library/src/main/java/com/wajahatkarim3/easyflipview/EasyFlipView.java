@@ -1,10 +1,12 @@
 package com.wajahatkarim3.easyflipview;
 
+import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -19,6 +21,8 @@ import android.widget.FrameLayout;
  * @version 1.0.0 01/05/2017
  */
 public class EasyFlipView extends FrameLayout {
+
+    public static final String TAG = EasyFlipView.class.getSimpleName();
 
     public static final int DEFAULT_FLIP_DURATION = 400;
 
@@ -110,6 +114,9 @@ public class EasyFlipView extends FrameLayout {
     public void flipTheView() {
 
         if (!flipEnabled)
+            return;
+
+        if (mSetRightOut.isRunning() || mSetLeftIn.isRunning())
             return;
 
         if (!mIsBackVisible) {
