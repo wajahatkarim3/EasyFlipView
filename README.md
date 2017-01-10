@@ -10,12 +10,16 @@ Demo
 ====
 Install [Demo](https://github.com/wajahatkarim3/EasyFlipView/releases/download/1.0.0/EasyFlipView-Demo_v1.0.0.apk) app or APK from [Releases](https://github.com/wajahatkarim3/EasyFlipView/releases) on your device and click on any card to flip it!
 
+Changelog
+=========
+Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/releases) tab.
+
 Installation
 ============
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  compile 'com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.0'
+  compile 'com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.1'
 }
 ```
 
@@ -25,7 +29,7 @@ Or add DBFlowManager as a new dependency inside your pom.xml
 <dependency> 
   <groupId>com.wajahatkarim3.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>1.0.0</version> 
+  <version>1.0.1</version> 
   <type>pom</type> 
 </dependency>
 ```
@@ -66,8 +70,9 @@ All customizable attributes for EasyFlipView
 In Code (Java)
 ----
 ```java
-// Flips the view with animation
+// Flips the view with or without animation
 mYourFlipView.flipTheView();
+mYourFlipView.flipTheView(false);
 
 // Sets and Gets the Flip Animation Duration in milliseconds (Default is 400 ms)
 mYourFlipView.setFlipDuration(1000);
@@ -80,6 +85,13 @@ boolean flipStatus = mYourFlipView.isFlipEnabled();
 // Sets and gets the flip on touch status (Default is true)
 mYourFlipView.setFlipOntouch(false);
 boolean flipTouchStatus = mYourFlipView.isFlipOnTouch();
+
+// Get current flip state in enum (FlipState.FRONT_SIDE or FlipState.BACK_SIDE)
+EasyFlipView.FlipState flipSide = mYourFlipView.getCurrentFlipState();
+
+// Get whether front/back side of flip is visible or not.
+boolean frontVal = mYourFlipView.isFrontSide();
+boolean backVal = mYourFlipView.isBackSide();
 
 ```
 
