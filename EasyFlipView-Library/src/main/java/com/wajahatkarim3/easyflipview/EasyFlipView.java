@@ -149,7 +149,7 @@ public class EasyFlipView extends FrameLayout {
      */
     public void flipTheView(boolean withAnimation)
     {
-        if (withAnimation == false)
+        if (!withAnimation)
         {
             mSetLeftIn.setDuration(0);
             mSetRightOut.setDuration(0);
@@ -185,7 +185,7 @@ public class EasyFlipView extends FrameLayout {
                     float dx = x2 -x1;
                     float dy = y2 -y1;
                     float MAX_CLICK_DISTANCE = 0.5f;
-                    if(dx < MAX_CLICK_DISTANCE && dy < MAX_CLICK_DISTANCE && dx >= 0 && dy >= 0)
+                    if ((dx>= 0 && dx<MAX_CLICK_DISTANCE)&&(dy>= 0&& dy<MAX_CLICK_DISTANCE))
                     {
                         flipTheView();
                     }
@@ -195,7 +195,6 @@ public class EasyFlipView extends FrameLayout {
         else {
             return super.onTouchEvent(event);
         }
-        return false;
     }
 
     /**
