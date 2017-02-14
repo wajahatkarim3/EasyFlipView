@@ -1,0 +1,17 @@
+language: android
+android:
+components:
+- platform-tools
+- build-tools-23.0.1
+- android-23
+- extra-android-m2repository
+jdk:
+- oraclejdk8
+sude: required
+script:
+- ./gradlew build --stacktrace
+before_install:
+- chmod +x gradlew
+branches:
+only:
+- master
