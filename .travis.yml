@@ -7,10 +7,14 @@ components:
 - android-25
 - extra-android-m2repository
 - extra-android-support
-- mkdir -p "$ANDROID_HOME/licenses"
-- echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+licenses:
+- 'android-sdk-preview-license-52d11cd2'
+- 'android-sdk-license-.+'
+- 'google-gdk-license-.+'
 notifications:
 email: false
 before_install:
 - chmod +x gradlew
-script: ./gradlew clean
+- mkdir -p "$ANDROID_HOME/licenses"
+- echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+script: ./gradlew clean build
