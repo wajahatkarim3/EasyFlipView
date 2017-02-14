@@ -97,14 +97,51 @@ public class EasyFlipView extends FrameLayout {
     }
 
     private void findViews() {
-        mCardFrontLayout = getChildAt(0);
-        mCardBackLayout = getChildAt(1);
+        mCardFrontLayout = getChildAt(1);
+        mCardBackLayout = getChildAt(0);
+
+        mFlipState = FlipState.FRONT_SIDE;
+        if (!isFlipOnTouch())
+        {
+            mCardFrontLayout.setVisibility(VISIBLE);
+            mCardBackLayout.setVisibility(GONE);
+        }
     }
 
     private void loadAnimations() {
-        mSetRightOut = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, R.animator.animation_flip_in);
-        mSetLeftIn = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, R.animator.animation_flip_out);
+        mSetRightOut = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, R.animator.animation_flip_out);
+        mSetLeftIn = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, R.animator.animation_flip_in);
 
+        mSetRightOut.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+
+                if (mFlipState == FlipState.FRONT_SIDE)
+                {
+                    mCardBackLayout.setVisibility(GONE);
+                    mCardFrontLayout.setVisibility(VISIBLE);
+                }
+                else {
+                    mCardBackLayout.setVisibility(VISIBLE);
+                    mCardFrontLayout.setVisibility(GONE);
+                }
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
         setFlipDuration(flipDuration);
     }
 
@@ -126,7 +163,11 @@ public class EasyFlipView extends FrameLayout {
         if (mSetRightOut.isRunning() || mSetLeftIn.isRunning())
             return;
 
-        if (!mIsBackVisible) {
+        mCardBackLayout.setVisibility(VISIBLE);
+        mCardFrontLayout.setVisibility(VISIBLE);
+
+        if (mFlipState == FlipState.FRONT_SIDE) {
+            // From front to back
             mSetRightOut.setTarget(mCardFrontLayout);
             mSetLeftIn.setTarget(mCardBackLayout);
             mSetRightOut.start();
@@ -134,6 +175,7 @@ public class EasyFlipView extends FrameLayout {
             mIsBackVisible = true;
             mFlipState = FlipState.BACK_SIDE;
         } else {
+            // from back to front
             mSetRightOut.setTarget(mCardBackLayout);
             mSetLeftIn.setTarget(mCardFrontLayout);
             mSetRightOut.start();
@@ -195,6 +237,7 @@ public class EasyFlipView extends FrameLayout {
         else {
             return super.onTouchEvent(event);
         }
+        return super.onTouchEvent(event);
     }
 
     /**
@@ -227,8 +270,14 @@ public class EasyFlipView extends FrameLayout {
      */
     public void setFlipDuration(int flipDuration) {
         this.flipDuration = flipDuration;
-        mSetRightOut.setDuration(flipDuration);
-        mSetLeftIn.setDuration(flipDuration);
+
+        //mSetRightOut.setDuration(flipDuration);
+        mSetRightOut.getChildAnimations().get(0).setDuration(flipDuration);
+        mSetRightOut.getChildAnimations().get(1).setStartDelay(flipDuration/2);
+
+        //mSetLeftIn.setDuration(flipDuration);
+        mSetLeftIn.getChildAnimations().get(1).setDuration(flipDuration);
+        mSetLeftIn.getChildAnimations().get(2).setStartDelay(flipDuration/2);
     }
 
     /**

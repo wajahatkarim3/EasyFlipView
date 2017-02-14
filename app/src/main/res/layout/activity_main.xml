@@ -17,18 +17,18 @@
         android:id="@+id/easyFlipView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:flipOnTouch="true"
+        app:flipOnTouch="false"
         app:flipDuration="500"
         app:flipEnabled="true">
 
-        <ImageView
+        <ImageView android:id="@+id/imgBackCard"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="center"
             android:src="@drawable/card_back"
             />
 
-        <ImageView
+        <ImageView android:id="@+id/imgFrontCard"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="center"

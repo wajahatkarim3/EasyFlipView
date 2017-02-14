@@ -19,7 +19,7 @@ Installation
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  compile 'com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.1'
+  compile 'com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.2'
 }
 ```
 
@@ -29,7 +29,7 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 <dependency> 
   <groupId>com.wajahatkarim3.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>1.0.1</version> 
+  <version>1.0.2</version> 
   <type>pom</type> 
 </dependency>
 ```

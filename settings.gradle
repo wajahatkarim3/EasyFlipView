@@ -1,0 +1,2 @@
+include ':app', ':EasyFlipView-Library'
+//project(':EasyFlipView-Library').projectDir=new File('../EasyFlipView-Library')
