@@ -78,8 +78,9 @@ public class EasyFlipView extends FrameLayout {
             } finally {
                 attrArray.recycle();
             }
-
         }
+        
+        loadAnimations();
     }
 
     @Override
@@ -92,19 +93,59 @@ public class EasyFlipView extends FrameLayout {
         }
 
         findViews();
-        loadAnimations();
+        changeCameraDistance();
+    }
+    
+    @Override
+    public void addView(View v, int pos, ViewGroup.LayoutParams params) {
+        if (getChildCount() == 2) {
+            throw new IllegalStateException("EasyFlipView can host only two direct children!"); 
+        }
+        
+        super.addView(v, pos, params);
+        
+        findViews();
         changeCameraDistance();
     }
 
+    @Override
+    public void removeView(View v) {
+        super.removeView(v);
+        
+        findViews();
+    }
+
+    @Override
+    public void removeAllViewsInLayout() {
+        super.removeAllViewsInLayout();
+
+        findViews();
+    }
+
     private void findViews() {
-        mCardFrontLayout = getChildAt(1);
-        mCardBackLayout = getChildAt(0);
+        // Invalidation since we use this also on removeView
+        mCardBackLayout = null;
+        mCardFrontLayout = null;
+        
+        int childs = getChildCount();
+        if (childs < 1) {
+            return;
+        }
+
+        if (childs < 2) {
+            mCardFrontLayout = getChildAt(0); 
+        } else if (childs == 2) {
+            mCardFrontLayout = getChildAt(1);
+            mCardBackLayout = getChildAt(0);
+        }
 
         mFlipState = FlipState.FRONT_SIDE;
-        if (!isFlipOnTouch())
-        {
+        if (!isFlipOnTouch()) {
             mCardFrontLayout.setVisibility(VISIBLE);
-            mCardBackLayout.setVisibility(GONE);
+            
+            if (mCardBackLayout != null) {
+                mCardBackLayout.setVisibility(GONE);
+            }
         }
     }
 
@@ -148,21 +189,25 @@ public class EasyFlipView extends FrameLayout {
     private void changeCameraDistance() {
         int distance = 8000;
         float scale = getResources().getDisplayMetrics().density * distance;
-        mCardFrontLayout.setCameraDistance(scale);
-        mCardBackLayout.setCameraDistance(scale);
+        
+        if (mCardFrontLayout != null) {
+            mCardFrontLayout.setCameraDistance(scale);
+        }
+        if (mCardBackLayout != null) {
+            mCardBackLayout.setCameraDistance(scale);
+        }
     }
 
     /**
      * Play the animation of flipping and flip the view for one side!
      */
     public void flipTheView() {
-
-        if (!flipEnabled)
+        if (!flipEnabled || getChildCount() < 2)
             return;
 
         if (mSetRightOut.isRunning() || mSetLeftIn.isRunning())
             return;
-
+        
         mCardBackLayout.setVisibility(VISIBLE);
         mCardFrontLayout.setVisibility(VISIBLE);
 
@@ -191,6 +236,9 @@ public class EasyFlipView extends FrameLayout {
      */
     public void flipTheView(boolean withAnimation)
     {
+        if (getChildCount() < 2)
+            return;
+      
         if (!withAnimation)
         {
             mSetLeftIn.setDuration(0);
