@@ -91,7 +91,7 @@ public class EasyFlipView extends FrameLayout {
         if (getChildCount() > 2) {
             throw new IllegalStateException("EasyFlipView can host only two direct children!");
         }
-
+        
         findViews();
         changeCameraDistance();
     }
@@ -119,6 +119,9 @@ public class EasyFlipView extends FrameLayout {
     public void removeAllViewsInLayout() {
         super.removeAllViewsInLayout();
 
+        // Reset the state
+        mFlipState = FlipState.FRONT_SIDE;
+
         findViews();
     }
 
@@ -133,13 +136,15 @@ public class EasyFlipView extends FrameLayout {
         }
 
         if (childs < 2) {
+            // Only invalidate flip state if we have a single child
+            mFlipState = FlipState.FRONT_SIDE;
+
             mCardFrontLayout = getChildAt(0); 
         } else if (childs == 2) {
             mCardFrontLayout = getChildAt(1);
             mCardBackLayout = getChildAt(0);
         }
 
-        mFlipState = FlipState.FRONT_SIDE;
         if (!isFlipOnTouch()) {
             mCardFrontLayout.setVisibility(VISIBLE);
             
