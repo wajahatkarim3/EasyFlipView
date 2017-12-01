@@ -4,5 +4,7 @@
         <attr name="flipOnTouch" format="boolean"/>
         <attr name="flipDuration" format="integer"/>
         <attr name="flipEnabled" format="boolean"/>
+        <attr name="animFlipInId" format="reference"/>
+        <attr name="animFlipOutId" format="reference"/>
     </declare-styleable>
 </resources>

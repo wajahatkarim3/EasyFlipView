@@ -3,12 +3,12 @@ apply plugin: 'com.android.library'
 ext {
     PUBLISH_GROUP_ID = 'com.wajahatkarim3.EasyFlipView'
     PUBLISH_ARTIFACT_ID = 'EasyFlipView'
-    PUBLISH_VERSION = '1.0.2'
+    PUBLISH_VERSION = '1.1.0'
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 15
@@ -35,7 +35,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile "com.android.support:appcompat-v7:$supportVersion"
     testCompile 'junit:junit:4.12'
 }
 

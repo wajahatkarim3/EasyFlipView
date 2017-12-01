@@ -37,5 +37,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
+            @Override
+            public void onViewFlipCompleted(EasyFlipView.FlipState newCurrentSide) {
+                Toast.makeText(MainActivity.this, "Flip Completed! New Side is: " + newCurrentSide, Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 }

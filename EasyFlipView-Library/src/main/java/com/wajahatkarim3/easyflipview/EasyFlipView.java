@@ -5,6 +5,7 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.AnimatorRes;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -26,6 +27,8 @@ public class EasyFlipView extends FrameLayout {
     public static final String TAG = EasyFlipView.class.getSimpleName();
 
     public static final int DEFAULT_FLIP_DURATION = 400;
+    private int animFlipOutId = R.animator.animation_flip_out;
+    private int animFlipInId = R.animator.animation_flip_in;
 
     public enum FlipState {
         FRONT_SIDE,
@@ -47,6 +50,8 @@ public class EasyFlipView extends FrameLayout {
     private float y1;
 
     private FlipState mFlipState = FlipState.FRONT_SIDE;
+
+    private OnFlipAnimationListener onFlipListener = null;
 
     public EasyFlipView(Context context) {
         super(context);
@@ -76,6 +81,8 @@ public class EasyFlipView extends FrameLayout {
                 flipOnTouch = attrArray.getBoolean(R.styleable.easy_flip_view_flipOnTouch, true);
                 flipDuration = attrArray.getInt(R.styleable.easy_flip_view_flipDuration, DEFAULT_FLIP_DURATION);
                 flipEnabled = attrArray.getBoolean(R.styleable.easy_flip_view_flipEnabled, true);
+                //animFlipInId = attrArray.getResourceId(R.styleable.easy_flip_view_animFlipInId, R.animator.animation_flip_in);
+                //animFlipOutId = attrArray.getResourceId(R.styleable.easy_flip_view_animFlipOutId, R.animator.animation_flip_out);
             } finally {
                 attrArray.recycle();
             }
@@ -156,9 +163,15 @@ public class EasyFlipView extends FrameLayout {
     }
 
     private void loadAnimations() {
-        mSetRightOut = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, R.animator.animation_flip_out);
-        mSetLeftIn = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, R.animator.animation_flip_in);
+        mSetRightOut = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipOutId);
+        mSetLeftIn = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipInId);
 
+        if (mSetRightOut == null || mSetLeftIn == null)
+        {
+            throw new RuntimeException("No Animations Found! Please set Flip in and Flip out animation Ids.");
+        }
+
+        mSetRightOut.removeAllListeners();
         mSetRightOut.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
@@ -172,10 +185,16 @@ public class EasyFlipView extends FrameLayout {
                 {
                     mCardBackLayout.setVisibility(GONE);
                     mCardFrontLayout.setVisibility(VISIBLE);
+
+                    if (onFlipListener != null)
+                        onFlipListener.onViewFlipCompleted(FlipState.FRONT_SIDE);
                 }
                 else {
                     mCardBackLayout.setVisibility(VISIBLE);
                     mCardFrontLayout.setVisibility(GONE);
+
+                    if (onFlipListener != null)
+                        onFlipListener.onViewFlipCompleted(FlipState.BACK_SIDE);
                 }
             }
 
@@ -375,5 +394,45 @@ public class EasyFlipView extends FrameLayout {
     public boolean isBackSide()
     {
         return (mFlipState==FlipState.BACK_SIDE);
+    }
+
+    public OnFlipAnimationListener getOnFlipListener() {
+        return onFlipListener;
+    }
+
+    public void setOnFlipListener(OnFlipAnimationListener onFlipListener) {
+        this.onFlipListener = onFlipListener;
+    }
+
+    /*
+    public @AnimatorRes int getAnimFlipOutId() {
+        return animFlipOutId;
+    }
+
+    public void setAnimFlipOutId(@AnimatorRes int animFlipOutId) {
+        this.animFlipOutId = animFlipOutId;
+        loadAnimations();
+    }
+
+    public @AnimatorRes int getAnimFlipInId() {
+        return animFlipInId;
+    }
+
+    public void setAnimFlipInId(@AnimatorRes int animFlipInId) {
+        this.animFlipInId = animFlipInId;
+        loadAnimations();
+    }
+    */
+
+    /**
+     * The Flip Animation Listener for animations and flipping complete listeners
+     */
+    public interface OnFlipAnimationListener
+    {
+        /**
+         * Called when flip animation is completed.
+         * @param newCurrentSide After animation, the new side of the view. Either can be FlipState.FRONT_SIDE or FlipState.BACK_SIDE
+         */
+        void onViewFlipCompleted(FlipState newCurrentSide);
     }
 }
