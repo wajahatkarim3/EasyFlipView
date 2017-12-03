@@ -5,7 +5,6 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.AnimatorRes;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;

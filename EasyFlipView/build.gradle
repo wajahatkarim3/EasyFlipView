@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+ext {
+    /*
+    PUBLISH_GROUP_ID = 'com.wajahatkarim3.EasyFlipView'
+    PUBLISH_ARTIFACT_ID = 'EasyFlipView'
+    PUBLISH_VERSION = '2.0.0'
+    */
+
+    bintrayRepo = "EasyFlipView"
+    bintrayName = "com.wajahatkarim3.EasyFlipView"
+
+    publishedGroupId = 'com.wajahatkarim3.EasyFlipView'
+    libraryName = 'EasyFlipView'
+    artifact = 'EasyFlipView'
+
+    libraryDescription = 'A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.'
+
+    siteUrl = 'https://github.com/wajahatkarim3/EasyFlipView'
+    gitUrl = 'https://github.com/wajahatkarim3/EasyFlipView.git'
+
+    libraryVersion = '2.0.2'
+
+    developerId = 'wajahatkarim3'
+    developerName = 'Wajahat Karim'
+    developerEmail = 'wajahatkarim3@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation "com.android.support:appcompat-v7:$supportVersion"
+    testImplementation 'junit:junit:4.12'
+}
+
+// or use the remote copy to keep update with latest changes
+//apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+
+//apply from: 'android-release-aar.gradle'
+//apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+
+//Add these lines to publish library to bintray. This is the readymade scripts made by github user nuuneoi to make uploading to bintray easy.
+//Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

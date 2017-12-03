@@ -19,7 +19,7 @@ Installation
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  compile 'com.wajahatkarim3.EasyFlipView:EasyFlipView:1.0.2'
+  compile 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.0.2'
 }
 ```
 
@@ -29,7 +29,7 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 <dependency> 
   <groupId>com.wajahatkarim3.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>1.0.2</version> 
+  <version>2.0.2</version> 
   <type>pom</type> 
 </dependency>
 ```
@@ -93,6 +93,23 @@ EasyFlipView.FlipState flipSide = mYourFlipView.getCurrentFlipState();
 boolean frontVal = mYourFlipView.isFrontSide();
 boolean backVal = mYourFlipView.isBackSide();
 
+```
+
+Flip Animation Listener
+---
+```java
+EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyFlipView);
+easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
+            @Override
+            public void onViewFlipCompleted(EasyFlipView.FlipState newCurrentSide) 
+            {
+                
+                // ...
+                // Your code goes here
+                // ...
+                
+            }
+        });
 ```
 
 Donations
