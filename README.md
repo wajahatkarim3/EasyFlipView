@@ -10,6 +10,12 @@ Demo
 ====
 Install [Demo](https://github.com/wajahatkarim3/EasyFlipView/releases/download/1.0.0/EasyFlipView-Demo_v1.0.0.apk) app or APK from [Releases](https://github.com/wajahatkarim3/EasyFlipView/releases) on your device and click on any card to flip it!
 
+Video Tutorial
+====
+Thanks to [EDMT Dev](https://www.youtube.com/channel/UCllewj2bGdqB8U9Ld15INAg) for the video tutorial of EasyFlipView
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/xacptJxva4s/0.jpg)](http://www.youtube.com/watch?v=xacptJxva4s)
+
 Changelog
 =========
 Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/releases) tab.
