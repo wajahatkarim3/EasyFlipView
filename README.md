@@ -56,16 +56,27 @@ EasyFlipView In XML layouts
 </com.wajahatkarim3.easyflipview.EasyFlipView>
 ```
 All customizable attributes for EasyFlipView
-```xml
-<declare-styleable name="easy_flip_view">
-	<!-- Whether card should be flipped on touch or not (Default is true) -->
-	<attr name="flipOnTouch" format="boolean"/>
-	<!-- The duration of flip animation in milliseconds (Default is 400 ms) -->
-	<attr name="flipDuration" format="integer"/>
-	<!-- If this is set to false, then it won't flip ever (Default is true) -->
-	<attr name="flipEnabled" format="boolean"/>
-</declare-styleable>
-```
+
+<table>
+    <th>Attribute Name</th>
+    <th>Default Value</th>
+    <th>Description</th>
+    <tr>
+        <td>app:flipOnTouch="true"</td>
+        <td>true</td>
+        <td>Whether card should be flipped on touch or not.</td>
+    </tr>
+    <tr>
+        <td>app:flipDuration="400"</td>
+        <td>400</td>
+        <td>The duration of flip animation in milliseconds.</td>
+    </tr>
+    <tr>
+        <td>app:flipEnabled="true"</td>
+        <td>true</td>
+        <td>If this is set to false, then it won't flip ever</td>
+    </tr>
+    </table>
 
 In Code (Java)
 ----
