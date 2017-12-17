@@ -1,3 +1,6 @@
+sudo: required
+dist: trusty
+group: deprecated-2017Q4
 language: android
 jdk: oraclejdk8
 android:
@@ -17,6 +20,6 @@ before_install:
 - chmod +x gradlew
 - mkdir -p "$ANDROID_HOME/licenses"
 - echo -e "\8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
-// - echo -e "\d56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+- echo -e "\d56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 script: ./gradlew clean build
 
