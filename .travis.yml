@@ -1,8 +1,7 @@
-sudo: required
-dist: trusty
-group: deprecated-2017Q4
 language: android
 jdk: oraclejdk8
+dist: trusty
+group: deprecated-2017Q4
 android:
 - tools
   - tools
@@ -11,8 +10,7 @@ android:
   - android-25
   - extra
   - addon
-
-  licenses:
+licenses:
 - 'android-sdk-license-.+'
 notifications:
 email: false
@@ -22,4 +20,3 @@ before_install:
 - echo -e "\8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
 - echo -e "\d56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 script: ./gradlew clean build
-
