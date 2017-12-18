@@ -4,28 +4,18 @@ EasyFlipView
 
 A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc. 
 
-![](https://github.com/wajahatkarim3/EasyFlipView/blob/master/Art/demo.gif)
-
-Demo
-====
-Install [Demo](https://github.com/wajahatkarim3/EasyFlipView/releases/download/1.0.0/EasyFlipView-Demo_v1.0.0.apk) app or APK from [Releases](https://github.com/wajahatkarim3/EasyFlipView/releases) on your device and click on any card to flip it!
-
-Video Tutorial
-====
-Thanks to [EDMT Dev](https://www.youtube.com/channel/UCllewj2bGdqB8U9Ld15INAg) for the video tutorial of EasyFlipView
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/xacptJxva4s/0.jpg)](http://www.youtube.com/watch?v=xacptJxva4s)
+![](https://github.com/sachinvarma/EasyFlipView/blob/master/Art/demo.gif)
 
 Changelog
 =========
-Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/releases) tab.
+Changes exist in the [releases](https://github.com/sachinvarma/EasyFlipView/releases) tab.
 
 Installation
 ============
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  compile 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.0.2'
+  compile 'com.github.sachinvarma:EasyFlipView:2.0.3'
 }
 ```
 
@@ -33,9 +23,9 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 
 ```xml
 <dependency> 
-  <groupId>com.wajahatkarim3.EasyFlipView</groupId>
+  <groupId>com.github.sachinvarma</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>2.0.2</version> 
+  <version>2.0.3</version>
   <type>pom</type> 
 </dependency>
 ```
@@ -44,14 +34,16 @@ Usage
 
 XML
 ---
-EasyFlipView In XML layouts
+EasyFlipView In XML layouts("Vertical")
 ```xml
 <com.wajahatkarim3.easyflipview.EasyFlipView
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	app:flipOnTouch="true"
 	app:flipEnabled="true"
-	app:flipDuration="400">
+	app:flipDuration="400"
+	app:flipType="vertical"
+	>
 
 	<!-- Back Layout Goes Here -->
 	<include layout="@layout/flash_card_layout_back"/>
@@ -61,8 +53,27 @@ EasyFlipView In XML layouts
 
 </com.wajahatkarim3.easyflipview.EasyFlipView>
 ```
-All customizable attributes for EasyFlipView
 
+EasyFlipView In XML layouts("Horizontal")
+```xml
+<com.wajahatkarim3.easyflipview.EasyFlipView
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	app:flipOnTouch="true"
+	app:flipEnabled="true"
+	app:flipDuration="400"
+	app:flipType="horizontal"
+	>
+
+	<!-- Back Layout Goes Here -->
+	<include layout="@layout/flash_card_layout_back"/>
+
+	<!-- Front Layout Goes Here -->
+	<include layout="@layout/flash_card_layout_front"/>
+
+</com.wajahatkarim3.easyflipview.EasyFlipView>
+```
+All customizable attributes for EasyFlipView
 <table>
     <th>Attribute Name</th>
     <th>Default Value</th>
@@ -80,8 +91,13 @@ All customizable attributes for EasyFlipView
     <tr>
         <td>app:flipEnabled="true"</td>
         <td>true</td>
-        <td>If this is set to false, then it won't flip ever</td>
+        <td>If this is set to false, then it won't flip ever in Single View and it has to be always false for RecyclerView</td>
     </tr>
+     <tr>
+            <td>app:flipType="horizontal"</td>
+            <td>vertical</td>
+            <td>Whether card should flip in vertical or horizontal</td>
+        </tr>
     </table>
 
 In Code (Java)
@@ -154,6 +170,14 @@ Wajahat Karim
 - Twitter (http://twitter.com/wajahatkarim)
 - Medium (http://www.medium.com/@wajahatkarim3)
 - LinkedIn (http://www.linkedin.com/in/wajahatkarim)
+
+Updated By
+=========
+```
+Sachin Varma
+```
+- LinkedIn (https://www.linkedin.com/in/sachin-varma-58b243118/)
+
 
 # How to Contribute
 1. Fork it

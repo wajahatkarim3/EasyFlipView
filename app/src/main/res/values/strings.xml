@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EasyFlipView-Demo</string>
+  <string name="flip_in_simple_view">Flip in Simple View</string>
+  <string name="flip_in_recyclerview">Flip in RecyclerView</string>
 </resources>

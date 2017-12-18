@@ -1,55 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/windowBackgroundColor"
+    android:gravity="center"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/windowBackgroundColor"
-    android:orientation="vertical"
-    tools:context="com.wajahatkarim3.easyflipview.demo.MainActivity">
+    tools:context="com.wajahatkarim3.easyflipview.demo.MainActivity"
+    >
 
-    <com.wajahatkarim3.easyflipview.EasyFlipView
-        android:id="@+id/easyFlipView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:flipOnTouch="false"
-        app:flipDuration="500"
-        app:flipEnabled="true">
+  <Button
+      android:id="@+id/btSimpleView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:text="@string/flip_in_simple_view"
+      />
 
-        <ImageView android:id="@+id/imgBackCard"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:gravity="center"
-            android:src="@drawable/card_back"
-            />
 
-        <ImageView android:id="@+id/imgFrontCard"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:gravity="center"
-            android:src="@drawable/card_front"
-            />
-
-    </com.wajahatkarim3.easyflipview.EasyFlipView>
-
-    <com.wajahatkarim3.easyflipview.EasyFlipView
-        android:id="@+id/easyFlipView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:flipOnTouch="true"
-        app:flipDuration="500"
-        app:flipEnabled="true">
-
-        <include layout="@layout/flash_card_layout_back"/>
-
-        <include layout="@layout/flash_card_layout_front" />
-
-    </com.wajahatkarim3.easyflipview.EasyFlipView>
+  <Button
+      android:id="@+id/btRecyclerView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginTop="10dp"
+      android:text="@string/flip_in_recyclerview"
+      />
 
 </LinearLayout>
