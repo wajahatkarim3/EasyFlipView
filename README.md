@@ -102,7 +102,6 @@ All customizable attributes for EasyFlipView
             <td>vertical</td>
             <td>Whether card should flip in vertical or horizontal</td>
         </tr>
-
     </table>
 
 In Code (Java)
