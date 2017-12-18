@@ -5,6 +5,7 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -86,6 +87,9 @@ public class EasyFlipView extends FrameLayout {
           attrArray.getInt(R.styleable.easy_flip_view_flipDuration, DEFAULT_FLIP_DURATION);
         flipEnabled = attrArray.getBoolean(R.styleable.easy_flip_view_flipEnabled, true);
         flipType = attrArray.getString(R.styleable.easy_flip_view_flipType);
+        if (TextUtils.isEmpty(flipType)) {
+          flipType = "vertical";
+        }
         //animFlipInId = attrArray.getResourceId(R.styleable.easy_flip_view_animFlipInId, R.animator.animation_horizontal_flip_in);
         //animFlipOutId = attrArray.getResourceId(R.styleable.easy_flip_view_animFlipOutId, R.animator.animation_horizontal_flip_out);
       } finally {
