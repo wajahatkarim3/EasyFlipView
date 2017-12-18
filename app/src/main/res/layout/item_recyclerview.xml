@@ -1,0 +1,18 @@
+<com.wajahatkarim3.easyflipview.EasyFlipView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/flipView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:flipDuration="400"
+    app:flipEnabled="true"
+    app:flipOnTouch="false"
+    app:flipType="horizontal"
+    >
+  <!-- Back Layout Goes Here -->
+  <include layout="@layout/item_flip_back"/>
+
+  <!-- Front Layout Goes Here -->
+  <include layout="@layout/item_flip_front"/>
+
+</com.wajahatkarim3.easyflipview.EasyFlipView>
