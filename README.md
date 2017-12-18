@@ -104,8 +104,14 @@ All customizable attributes for EasyFlipView
     <tr>
         <td>app:flipEnabled="true"</td>
         <td>true</td>
-        <td>If this is set to false, then it won't flip ever</td>
+        <td>If this is set to false, then it won't flip ever in Single View and it has to be always false for RecyclerView</td>
     </tr>
+     <tr>
+            <td>app:flipType="horizontal"</td>
+            <td>vertical</td>
+            <td>Whether card should flip in vertical or horizontal</td>
+        </tr>
+
     </table>
 
 In Code (Java)
