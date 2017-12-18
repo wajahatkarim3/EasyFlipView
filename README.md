@@ -8,18 +8,18 @@ A quick and easy flip view through which you can create views with two sides lik
 
 Demo
 ====
-Install [Demo](https://github.com/wajahatkarim3/EasyFlipView/releases/download/1.0.0/EasyFlipView-Demo_v1.0.0.apk) app or APK from [Releases](https://github.com/wajahatkarim3/EasyFlipView/releases) on your device and click on any card to flip it!
+Install [Demo](https://github.com/sachinvarma/EasyFlipView/releases/download/2.0.3/EasyFlipView-Demo_v2.0.3.apk) app or APK from [Releases](https://github.com/sachinvarma/EasyFlipView/releases) on your device and click on any card to flip it!
 
 Changelog
 =========
-Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/releases) tab.
+Changes exist in the [releases](https://github.com/sachinvarma/EasyFlipView/releases) tab.
 
 Installation
 ============
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  compile 'com.sachinvarma.EasyFlipView:EasyFlipView:0.0.1'
+  compile 'com.sachinvarma.EasyFlipView:EasyFlipView:2.0.3'
 }
 ```
 
@@ -29,7 +29,7 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 <dependency> 
   <groupId>com.sachinvarma.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>0.0.1</version>
+  <version>2.0.3</version>
   <type>pom</type> 
 </dependency>
 ```
@@ -168,12 +168,20 @@ Of course, you can also choose what you want to donate, all donations are awesom
 Developed By
 ============
 ```
-Wajahat Karim
+Wajahat Karim , Sachin Varma
 ```
 - Website (http://wajahatkarim.com)
 - Twitter (http://twitter.com/wajahatkarim)
 - Medium (http://www.medium.com/@wajahatkarim3)
 - LinkedIn (http://www.linkedin.com/in/wajahatkarim)
+
+Update By
+=========
+```
+Sachin Varma
+```
+- LinkedIn (https://www.linkedin.com/in/sachin-varma-58b243118/)
+
 
 # How to Contribute
 1. Fork it
