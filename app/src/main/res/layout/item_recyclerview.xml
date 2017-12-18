@@ -7,7 +7,6 @@
     app:flipDuration="400"
     app:flipEnabled="true"
     app:flipOnTouch="false"
-    app:flipType="horizontal"
     >
   <!-- Back Layout Goes Here -->
   <include layout="@layout/item_flip_back"/>
