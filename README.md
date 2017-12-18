@@ -44,14 +44,16 @@ Usage
 
 XML
 ---
-EasyFlipView In XML layouts
+EasyFlipView In XML layouts("Vertical")
 ```xml
 <com.wajahatkarim3.easyflipview.EasyFlipView
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	app:flipOnTouch="true"
 	app:flipEnabled="true"
-	app:flipDuration="400">
+	app:flipDuration="400"
+	app:flipType="vertical"
+	>
 
 	<!-- Back Layout Goes Here -->
 	<include layout="@layout/flash_card_layout_back"/>
@@ -61,6 +63,28 @@ EasyFlipView In XML layouts
 
 </com.wajahatkarim3.easyflipview.EasyFlipView>
 ```
+
+EasyFlipView In XML layouts("Horizontal")
+```xml
+<com.wajahatkarim3.easyflipview.EasyFlipView
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	app:flipOnTouch="true"
+	app:flipEnabled="true"
+	app:flipDuration="400"
+	app:flipType="horizontal"
+	>
+
+	<!-- Back Layout Goes Here -->
+	<include layout="@layout/flash_card_layout_back"/>
+
+	<!-- Front Layout Goes Here -->
+	<include layout="@layout/flash_card_layout_front"/>
+
+</com.wajahatkarim3.easyflipview.EasyFlipView>
+```
+
+
 All customizable attributes for EasyFlipView
 
 <table>
