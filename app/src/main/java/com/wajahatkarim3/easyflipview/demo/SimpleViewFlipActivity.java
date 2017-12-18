@@ -39,7 +39,7 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
 
     easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
       @Override
-      public void onViewFlipCompleted(EasyFlipView.FlipState newCurrentSide) {
+      public void onViewFlipCompleted(EasyFlipView easyView, EasyFlipView.FlipState newCurrentSide) {
         Toast.makeText(SimpleViewFlipActivity.this,
           "Flip Completed! New Side is: " + newCurrentSide, Toast.LENGTH_LONG).show();
       }
