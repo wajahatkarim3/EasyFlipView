@@ -77,10 +77,7 @@ EasyFlipView In XML layouts("Horizontal")
 
 </com.wajahatkarim3.easyflipview.EasyFlipView>
 ```
-
-
 All customizable attributes for EasyFlipView
-
 <table>
     <th>Attribute Name</th>
     <th>Default Value</th>
