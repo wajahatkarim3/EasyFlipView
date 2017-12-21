@@ -1,5 +1,6 @@
 EasyFlipView
 ============
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b6f4c512c5cf4705a41a04fe101a6c6e)](https://www.codacy.com/app/wajahatkarim3/EasyFlipView?utm_source=github.com&utm_medium=referral&utm_content=wajahatkarim3/EasyFlipView&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/wajahatkarim3/EasyFlipView.svg?branch=master)](https://travis-ci.org/wajahatkarim3/EasyFlipView) [ ![Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) ](https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/5051) [![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=15) [![](https://img.shields.io/badge/MaterialUp-EasyFlipView-yellowgreen.png)](https://material.uplabs.com/posts/easyflipview) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/wajahatkarim3)
 
 A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc. 
