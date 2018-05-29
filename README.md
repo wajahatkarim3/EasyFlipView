@@ -105,8 +105,10 @@ All customizable attributes for EasyFlipView
             <td>Whether card should flip in vertical or horizontal</td>
         </tr>
 	 <tr>
-            <td>app:flipFrom="right"</td>
-            <td>left</td>
+            <td>app:flipFrom="right"
+		app:flipFrom="back"</td>
+            <td>left
+		front</td>
             <td>Whether card should flip from left to right Or right to left(Horizontal type) or car should flip to front or back(Vertical type)</td>
         </tr>
     </table>
