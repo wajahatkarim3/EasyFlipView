@@ -20,6 +20,7 @@
       android:layout_height="wrap_content"
       app:flipDuration="500"
       app:flipEnabled="true"
+      app:flipFrom="back"
       app:flipOnTouch="false"
       app:flipType="vertical"
       >
@@ -51,6 +52,7 @@
       android:layout_marginTop="20dp"
       app:flipDuration="500"
       app:flipEnabled="true"
+      app:flipFrom="left"
       app:flipOnTouch="true"
       app:flipType="horizontal"
       >

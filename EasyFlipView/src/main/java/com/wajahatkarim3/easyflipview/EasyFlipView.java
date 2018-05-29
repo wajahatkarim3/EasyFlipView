@@ -34,6 +34,8 @@ public class EasyFlipView extends FrameLayout {
   private int animFlipHorizontalRightInId = R.animator.animation_horizontal_right_in;
   private int animFlipVerticalOutId = R.animator.animation_vertical_flip_out;
   private int animFlipVerticalInId = R.animator.animation_vertical_flip_in;
+  private int animFlipVerticalFrontOutId = R.animator.animation_vertical_front_out;
+  private int animFlipVerticalFrontInId = R.animator.animation_vertical_flip_front_in;
 
   public enum FlipState {
     FRONT_SIDE, BACK_SIDE
@@ -238,9 +240,17 @@ public class EasyFlipView extends FrameLayout {
       });
       setFlipDuration(flipDuration);
     } else {
+
+      if(!TextUtils.isEmpty(flipTypeFrom)&&flipTypeFrom.equalsIgnoreCase("front"))
+      {
+        mSetTopOut = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipVerticalFrontOutId);
+        mSetBottomIn =
+          (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipVerticalFrontInId);
+      }
+      else{
       mSetTopOut = (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipVerticalOutId);
       mSetBottomIn =
-        (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipVerticalInId);
+        (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipVerticalInId);}
 
       if (mSetTopOut == null || mSetBottomIn == null) {
         throw new RuntimeException(
