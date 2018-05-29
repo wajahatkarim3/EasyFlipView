@@ -43,7 +43,9 @@ EasyFlipView In XML layouts("Vertical")
 	app:flipOnTouch="true"
 	app:flipEnabled="true"
 	app:flipDuration="400"
-	app:flipType="vertical"
+	app:flipFrom="front"
+        app:flipOnTouch="false"
+        app:flipType="vertical"
 	>
 
 	<!-- Back Layout Goes Here -->
@@ -63,7 +65,9 @@ EasyFlipView In XML layouts("Horizontal")
 	app:flipOnTouch="true"
 	app:flipEnabled="true"
 	app:flipDuration="400"
-	app:flipType="horizontal"
+	app:flipFrom="right"
+        app:flipOnTouch="true"
+        app:flipType="horizontal"
 	>
 
 	<!-- Back Layout Goes Here -->
@@ -99,6 +103,11 @@ All customizable attributes for EasyFlipView
             <td>app:flipType="horizontal"</td>
             <td>vertical</td>
             <td>Whether card should flip in vertical or horizontal</td>
+        </tr>
+	 <tr>
+            <td>app:flipFrom="right"</td>
+            <td>left</td>
+            <td>Whether card should flip from left to right Or right to left(Horizontal type) or car should flip to front or back(Vertical type)</td>
         </tr>
     </table>
 
@@ -186,7 +195,7 @@ Special Thanks
 =========
 - [**iGio90**](https://github.com/iGio90) for adding dynamic views support [Pull Request # 10](https://github.com/wajahatkarim3/EasyFlipView/pull/10)
 
-- [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding vertical animations support [Pull Request # 12](https://github.com/wajahatkarim3/EasyFlipView/pull/12)
+- [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding vertical animations support with Front and Back flip and horizontal animation flip from Right to Left [Pull Request # 12](https://github.com/wajahatkarim3/EasyFlipView/pull/12)
 
 
 # How to Contribute
