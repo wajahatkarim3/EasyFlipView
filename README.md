@@ -1,21 +1,22 @@
 EasyFlipView
 ============
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b6f4c512c5cf4705a41a04fe101a6c6e)](https://www.codacy.com/app/wajahatkarim3/EasyFlipView?utm_source=github.com&utm_medium=referral&utm_content=wajahatkarim3/EasyFlipView&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/wajahatkarim3/EasyFlipView.svg?branch=master)](https://travis-ci.org/wajahatkarim3/EasyFlipView) [ ![Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) ](https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/5051) [![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=15) [![](https://img.shields.io/badge/MaterialUp-EasyFlipView-yellowgreen.png)](https://material.uplabs.com/posts/easyflipview) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/wajahatkarim3)
 
 A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc. 
 
-![](https://github.com/sachinvarma/EasyFlipView/blob/master/Art/demo.gif)
+![](https://github.com/wajahatkarim3/EasyFlipView/blob/master/Art/demo.gif)
 
 Changelog
 =========
-Changes exist in the [releases](https://github.com/sachinvarma/EasyFlipView/releases) tab.
+Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/releases) tab.
 
 Installation
 ============
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  compile 'com.github.sachinvarma:EasyFlipView:2.0.4'
+  compile 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.0.5'
 }
 ```
 
@@ -23,9 +24,9 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 
 ```xml
 <dependency> 
-  <groupId>com.github.sachinvarma</groupId>
+  <groupId>com.wajahatkarim3.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>2.0.4</version>
+  <version>2.0.5</version>
   <type>pom</type> 
 </dependency>
 ```
@@ -73,6 +74,7 @@ EasyFlipView In XML layouts("Horizontal")
 
 </com.wajahatkarim3.easyflipview.EasyFlipView>
 ```
+
 All customizable attributes for EasyFlipView
 <table>
     <th>Attribute Name</th>
@@ -126,6 +128,14 @@ EasyFlipView.FlipState flipSide = mYourFlipView.getCurrentFlipState();
 boolean frontVal = mYourFlipView.isFrontSide();
 boolean backVal = mYourFlipView.isBackSide();
 
+// Get/Set the FlipType to FlipType.Horizontal
+boolean isHorizontal = mYourFlipView.isHorizontalType();
+mYourFlipView.setToHorizontalType();
+
+// Get/Set the FlipType to FlipType.Vertical
+boolean isVertical = mYourFlipView.isVerticalType();
+mYourFlipView.setToVerticalType();
+
 ```
 
 Flip Animation Listener
@@ -134,7 +144,7 @@ Flip Animation Listener
 EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyFlipView);
 easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
             @Override
-            public void onViewFlipCompleted(EasyFlipView.FlipState newCurrentSide) 
+            public void onViewFlipCompleted(EasyFlipView flipView, EasyFlipView.FlipState newCurrentSide) 
             {
                 
                 // ...
@@ -159,6 +169,7 @@ This project needs you! If you would like to support this project's further deve
 * **[Donate $50](https://www.paypal.me/WajahatKarim/50)**: I really really want to support this project, great job!
 * **[Donate $100](https://www.paypal.me/WajahatKarim/100)**: You are the man! This project saved me hours (if not days) of struggle and hard work, simply awesome!
 * **[Donate $2799](https://www.paypal.me/WajahatKarim/2799)**: Go buddy, buy Macbook Pro for yourself!
+
 Of course, you can also choose what you want to donate, all donations are awesome!
 
 Developed By
@@ -171,12 +182,11 @@ Wajahat Karim
 - Medium (http://www.medium.com/@wajahatkarim3)
 - LinkedIn (http://www.linkedin.com/in/wajahatkarim)
 
-Updated By
+Special Thanks
 =========
-```
-Sachin Varma
-```
-- LinkedIn (https://www.linkedin.com/in/sachin-varma-58b243118/)
+- [**iGio90**](https://github.com/iGio90) for adding dynamic views support [Pull Request # 10](https://github.com/wajahatkarim3/EasyFlipView/pull/10)
+
+- [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding vertical animations support [Pull Request # 12](https://github.com/wajahatkarim3/EasyFlipView/pull/12)
 
 
 # How to Contribute
@@ -188,7 +198,7 @@ Sachin Varma
 
 # License
 
-    Copyright 2016 Wajahat Karim
+    Copyright 2017 Wajahat Karim
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
