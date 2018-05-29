@@ -30,6 +30,7 @@
         android:layout_height="200dp"
         android:gravity="center"
         android:src="@drawable/card_back"
+        android:contentDescription="TODO"
         />
 
     <ImageView
@@ -38,6 +39,7 @@
         android:layout_height="200dp"
         android:gravity="center"
         android:src="@drawable/card_front"
+        android:contentDescription="TODO"
         />
 
   </com.wajahatkarim3.easyflipview.EasyFlipView>

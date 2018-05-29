@@ -30,6 +30,8 @@ public class EasyFlipView extends FrameLayout {
   public static final int DEFAULT_FLIP_DURATION = 400;
   private int animFlipHorizontalOutId = R.animator.animation_horizontal_flip_out;
   private int animFlipHorizontalInId = R.animator.animation_horizontal_flip_in;
+  private int animFlipHorizontalRightOutId = R.animator.animation_horizontal_right_out;
+  private int animFlipHorizontalRightInId = R.animator.animation_horizontal_right_in;
   private int animFlipVerticalOutId = R.animator.animation_vertical_flip_out;
   private int animFlipVerticalInId = R.animator.animation_vertical_flip_in;
 
@@ -45,6 +47,8 @@ public class EasyFlipView extends FrameLayout {
   private View mCardFrontLayout;
   private View mCardBackLayout;
   private String flipType = "vertical";
+  private String flipTypeFrom = "right";
+
 
   private boolean flipOnTouch;
   private int flipDuration;
@@ -87,8 +91,13 @@ public class EasyFlipView extends FrameLayout {
           attrArray.getInt(R.styleable.easy_flip_view_flipDuration, DEFAULT_FLIP_DURATION);
         flipEnabled = attrArray.getBoolean(R.styleable.easy_flip_view_flipEnabled, true);
         flipType = attrArray.getString(R.styleable.easy_flip_view_flipType);
+        flipTypeFrom = attrArray.getString(R.styleable.easy_flip_view_flipFrom);
+
         if (TextUtils.isEmpty(flipType)) {
           flipType = "vertical";
+        }
+        if (TextUtils.isEmpty(flipTypeFrom)) {
+          flipTypeFrom = "left";
         }
         //animFlipInId = attrArray.getResourceId(R.styleable.easy_flip_view_animFlipInId, R.animator.animation_horizontal_flip_in);
         //animFlipOutId = attrArray.getResourceId(R.styleable.easy_flip_view_animFlipOutId, R.animator.animation_horizontal_flip_out);
@@ -172,10 +181,23 @@ public class EasyFlipView extends FrameLayout {
 
   private void loadAnimations() {
     if (flipType.equalsIgnoreCase("horizontal")) {
-      mSetRightOut =
-        (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipHorizontalOutId);
-      mSetLeftIn =
-        (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipHorizontalInId);
+
+      if(flipTypeFrom.equalsIgnoreCase("left"))
+      {
+        mSetRightOut =
+          (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipHorizontalOutId);
+        mSetLeftIn =
+          (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipHorizontalInId);
+      }
+      else
+      {
+        mSetRightOut =
+          (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipHorizontalRightOutId);
+        mSetLeftIn =
+          (AnimatorSet) AnimatorInflater.loadAnimator(this.context, animFlipHorizontalRightInId);
+      }
+
+
       if (mSetRightOut == null || mSetLeftIn == null) {
         throw new RuntimeException(
           "No Animations Found! Please set Flip in and Flip out animation Ids.");
