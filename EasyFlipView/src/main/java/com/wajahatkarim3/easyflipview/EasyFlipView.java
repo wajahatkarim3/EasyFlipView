@@ -219,12 +219,12 @@ public class EasyFlipView extends FrameLayout {
             mCardBackLayout.setVisibility(GONE);
             mCardFrontLayout.setVisibility(VISIBLE);
 
-            if (onFlipListener != null) onFlipListener.onViewFlipCompleted(FlipState.FRONT_SIDE);
+            if (onFlipListener != null) onFlipListener.onViewFlipCompleted(EasyFlipView.this, FlipState.FRONT_SIDE);
           } else {
             mCardBackLayout.setVisibility(VISIBLE);
             mCardFrontLayout.setVisibility(GONE);
 
-            if (onFlipListener != null) onFlipListener.onViewFlipCompleted(FlipState.BACK_SIDE);
+            if (onFlipListener != null) onFlipListener.onViewFlipCompleted(EasyFlipView.this, FlipState.BACK_SIDE);
           }
         }
 
@@ -271,12 +271,12 @@ public class EasyFlipView extends FrameLayout {
             mCardBackLayout.setVisibility(GONE);
             mCardFrontLayout.setVisibility(VISIBLE);
 
-            if (onFlipListener != null) onFlipListener.onViewFlipCompleted(FlipState.FRONT_SIDE);
+            if (onFlipListener != null) onFlipListener.onViewFlipCompleted(EasyFlipView.this, FlipState.FRONT_SIDE);
           } else {
             mCardBackLayout.setVisibility(VISIBLE);
             mCardFrontLayout.setVisibility(GONE);
 
-            if (onFlipListener != null) onFlipListener.onViewFlipCompleted(FlipState.BACK_SIDE);
+            if (onFlipListener != null) onFlipListener.onViewFlipCompleted(EasyFlipView.this,FlipState.BACK_SIDE);
           }
         }
 
@@ -563,6 +563,6 @@ public class EasyFlipView extends FrameLayout {
      * @param newCurrentSide After animation, the new side of the view. Either can be
      * FlipState.FRONT_SIDE or FlipState.BACK_SIDE
      */
-    void onViewFlipCompleted(FlipState newCurrentSide);
+    void onViewFlipCompleted(EasyFlipView easyFlipView, FlipState newCurrentSide);
   }
 }
