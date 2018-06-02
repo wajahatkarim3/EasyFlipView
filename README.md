@@ -16,7 +16,7 @@ Installation
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  compile 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.0.5'
+  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.0.6'
 }
 ```
 
@@ -26,7 +26,7 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 <dependency> 
   <groupId>com.wajahatkarim3.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>2.0.5</version>
+  <version>2.0.6</version>
   <type>pom</type> 
 </dependency>
 ```
