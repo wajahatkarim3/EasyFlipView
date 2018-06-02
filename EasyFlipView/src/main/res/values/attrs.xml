@@ -3,10 +3,8 @@
     <declare-styleable name="easy_flip_view">
         <attr name="flipOnTouch" format="boolean"/>
         <attr name="flipDuration" format="integer"/>
-        <attr name="flipType" format="enum">
-            <enum name="horizontal" value="0"/>
-            <enum name="vertical" value="1"/>
-        </attr>
+        <attr name="flipType" format="string"/>
+        <attr name="flipFrom" format="string"/>
         <attr name="flipEnabled" format="boolean"/>
         <attr name="animFlipInId" format="reference"/>
         <attr name="animFlipOutId" format="reference"/>
