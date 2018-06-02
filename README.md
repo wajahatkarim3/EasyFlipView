@@ -16,7 +16,7 @@ Installation
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.0.6'
+  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.0'
 }
 ```
 
@@ -26,7 +26,7 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 <dependency> 
   <groupId>com.wajahatkarim3.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>2.0.6</version>
+  <version>2.1.0</version>
   <type>pom</type> 
 </dependency>
 ```
@@ -44,6 +44,7 @@ EasyFlipView In XML layouts("Vertical")
 	app:flipEnabled="true"
 	app:flipDuration="400"
 	app:flipType="vertical"
+	app:flipFrom="front"
 	>
 
 	<!-- Back Layout Goes Here -->
@@ -63,6 +64,7 @@ EasyFlipView In XML layouts("Horizontal")
 	app:flipOnTouch="true"
 	app:flipEnabled="true"
 	app:flipDuration="400"
+	app:flipFrom="right"
 	app:flipType="horizontal"
 	>
 
@@ -100,6 +102,18 @@ All customizable attributes for EasyFlipView
             <td>vertical</td>
             <td>Whether card should flip in vertical or horizontal</td>
         </tr>
+        <tr>
+                    <td>app:flipType="horizontal"</td>
+                    <td>vertical</td>
+                    <td>Whether card should flip in vertical or horizontal</td>
+                </tr>
+        	 <tr>
+                    <td>app:flipFrom="right"
+        		app:flipFrom="back"</td>
+                    <td>left
+        		front</td>
+                    <td>Whether card should flip from left to right Or right to left(Horizontal type) or car should flip to front or back(Vertical type)</td>
+                </tr>
     </table>
 
 In Code (Java)
@@ -185,8 +199,8 @@ Wajahat Karim
 Special Thanks
 =========
 - [**iGio90**](https://github.com/iGio90) for adding dynamic views support [Pull Request # 10](https://github.com/wajahatkarim3/EasyFlipView/pull/10)
-
 - [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding vertical animations support [Pull Request # 12](https://github.com/wajahatkarim3/EasyFlipView/pull/12)
+- [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding multi-dimension animations support [Pull Request # 23](https://github.com/wajahatkarim3/EasyFlipView/pull/23)
 
 
 # How to Contribute
