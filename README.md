@@ -1,4 +1,4 @@
-EasyFlipView
+💳 EasyFlipView
 ============
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b6f4c512c5cf4705a41a04fe101a6c6e)](https://www.codacy.com/app/wajahatkarim3/EasyFlipView?utm_source=github.com&utm_medium=referral&utm_content=wajahatkarim3/EasyFlipView&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/wajahatkarim3/EasyFlipView.svg?branch=master)](https://travis-ci.org/wajahatkarim3/EasyFlipView) [ ![Download](https://api.bintray.com/packages/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/images/download.svg) ](https://bintray.com/wajahatkarim3/EasyFlipView/com.wajahatkarim3.EasyFlipView/_latestVersion) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-EasyFlipView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/5051) [![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=15) [![](https://img.shields.io/badge/MaterialUp-EasyFlipView-yellowgreen.png)](https://material.uplabs.com/posts/easyflipview) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/wajahatkarim3)
@@ -7,11 +7,11 @@ A quick and easy flip view through which you can create views with two sides lik
 
 ![](https://github.com/wajahatkarim3/EasyFlipView/blob/master/Art/demo.gif)
 
-Changelog
+✔️ Changelog
 =========
 Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/releases) tab.
 
-Installation
+💻 Installation
 ============
 Add this in your app's build.gradle file:
 ```groovy
@@ -30,7 +30,7 @@ Or add EasyFlipView as a new dependency inside your pom.xml
   <type>pom</type> 
 </dependency>
 ```
-Usage
+❔ Usage
 =====
 
 XML
@@ -77,6 +77,7 @@ EasyFlipView In XML layouts("Horizontal")
 </com.wajahatkarim3.easyflipview.EasyFlipView>
 ```
 
+# 🎨 Customizations & Attributes
 All customizable attributes for EasyFlipView
 <table>
     <th>Attribute Name</th>
@@ -169,7 +170,7 @@ easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
         });
 ```
 
-Donations
+💰 Donations
 =============
 
 This project needs you! If you would like to support this project's further development, the creator of this project or the continuous maintenance of this project, feel free to donate. Your donation is highly appreciated (and I love food, coffee and beer). Thank you!
@@ -186,7 +187,7 @@ This project needs you! If you would like to support this project's further deve
 
 Of course, you can also choose what you want to donate, all donations are awesome!
 
-Developed By
+👨 Developed By
 ============
 ```
 Wajahat Karim
@@ -196,21 +197,21 @@ Wajahat Karim
 - Medium (http://www.medium.com/@wajahatkarim3)
 - LinkedIn (http://www.linkedin.com/in/wajahatkarim)
 
-Special Thanks
+💖 Special Thanks
 =========
 - [**iGio90**](https://github.com/iGio90) for adding dynamic views support [Pull Request # 10](https://github.com/wajahatkarim3/EasyFlipView/pull/10)
 - [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding vertical animations support [Pull Request # 12](https://github.com/wajahatkarim3/EasyFlipView/pull/12)
 - [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding multi-dimension animations support [Pull Request # 23](https://github.com/wajahatkarim3/EasyFlipView/pull/23)
 
 
-# How to Contribute
+# 👍 How to Contribute
 1. Fork it
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
 5. Create new Pull Request
 
-# License
+# 📃 License
 
     Copyright 2017 Wajahat Karim
 
