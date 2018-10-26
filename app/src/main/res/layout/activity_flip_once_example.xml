@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FlipOnceExampleActivity"
+    android:layout_margin="15dp">
+
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/cardFlipView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flipDuration="500"
+        app:flipEnabled="true"
+        app:flipFrom="front"
+        app:flipOnTouch="false"
+        app:flipOnceEnabled="true"
+        app:flipType="vertical"
+
+        >
+
+    <ImageView
+        android:id="@+id/king_back_side"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:gravity="center"
+        android:src="@drawable/back_side_king"
+        android:contentDescription="TODO"
+        />
+
+    <ImageView
+        android:id="@+id/king_front_side"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:gravity="center"
+        android:src="@drawable/front_side_design"
+        android:contentDescription="TODO"
+        />
+</com.wajahatkarim3.easyflipview.EasyFlipView>
+
+</LinearLayout>
