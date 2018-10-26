@@ -24,5 +24,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, RecyclerViewFlipActivity.class));
       }
     });
+    findViewById(R.id.btFlipOnceEg).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(MainActivity.this, FlipOnceExampleActivity.class));
+      }
+    });
   }
 }
