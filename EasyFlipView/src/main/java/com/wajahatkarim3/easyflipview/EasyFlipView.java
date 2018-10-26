@@ -55,6 +55,7 @@ public class EasyFlipView extends FrameLayout {
   private boolean flipOnTouch;
   private int flipDuration;
   private boolean flipEnabled;
+  private boolean flipOnceEnabled;
 
   private Context context;
   private float x1;
@@ -77,10 +78,11 @@ public class EasyFlipView extends FrameLayout {
   }
 
   private void init(Context context, AttributeSet attrs) {
-    // Setting Defaul Values
+    // Setting Default Values
     flipOnTouch = true;
     flipDuration = DEFAULT_FLIP_DURATION;
     flipEnabled = true;
+    flipOnceEnabled=false;
 
     // Check for the attributes
     if (attrs != null) {
@@ -92,6 +94,7 @@ public class EasyFlipView extends FrameLayout {
         flipDuration =
           attrArray.getInt(R.styleable.easy_flip_view_flipDuration, DEFAULT_FLIP_DURATION);
         flipEnabled = attrArray.getBoolean(R.styleable.easy_flip_view_flipEnabled, true);
+        flipOnceEnabled = attrArray.getBoolean(R.styleable.easy_flip_view_flipOnceEnabled, false);
         flipType = attrArray.getString(R.styleable.easy_flip_view_flipType);
         flipTypeFrom = attrArray.getString(R.styleable.easy_flip_view_flipFrom);
 
@@ -312,6 +315,9 @@ public class EasyFlipView extends FrameLayout {
   public void flipTheView() {
     if (!flipEnabled || getChildCount() < 2) return;
 
+    if(flipOnceEnabled && mFlipState==FlipState.BACK_SIDE)
+        return;
+
     if (flipType.equalsIgnoreCase("horizontal")) {
       if (mSetRightOut.isRunning() || mSetLeftIn.isRunning()) return;
 
@@ -479,6 +485,27 @@ public class EasyFlipView extends FrameLayout {
       mSetBottomIn.getChildAnimations().get(2).setStartDelay(flipDuration / 2);
     }
   }
+
+    /**
+     * Returns whether view can be flipped only once!
+     *
+     * @return true or false
+     */
+    public boolean isFlipOnceEnabled()
+    {
+        return flipOnceEnabled;
+    }
+
+    /**
+     * Enable / Disable flip only once feature.
+     *
+     * @param flipOnceEnabled true or false
+     */
+    public void setFlipOnceEnabled(boolean flipOnceEnabled)
+    {
+        this.flipOnceEnabled = flipOnceEnabled;
+    }
+
 
   /**
    * Returns whether flip is enabled or not!
