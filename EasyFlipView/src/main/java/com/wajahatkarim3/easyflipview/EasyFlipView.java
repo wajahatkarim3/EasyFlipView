@@ -581,6 +581,92 @@ public class EasyFlipView extends FrameLayout {
     */
 
   /**
+   * Returns true if the Flip Type of animation is Horizontal?
+   */
+  public boolean isHorizontalType()
+  {
+    return flipType.equals("horizontal");
+  }
+
+  /**
+   * Returns true if the Flip Type of animation is Vertical?
+   */
+  public boolean isVerticalType()
+  {
+    return flipType.equals("vertical");
+  }
+
+  /**
+   * Sets the Flip Type of animation to Horizontal
+   */
+  public void setToHorizontalType()
+  {
+    flipType = "horizontal";
+    loadAnimations();
+  }
+
+  /**
+   * Sets the Flip Type of animation to Vertical
+   */
+  public void setToVerticalType()
+  {
+    flipType = "vertical";
+    loadAnimations();
+  }
+
+  /**
+   * Sets the flip type from direction to right
+   */
+  public void setFlipTypeFromRight()
+  {
+    if (flipType.equals("horizontal"))
+      flipTypeFrom = "right";
+    else flipTypeFrom = "front";
+    loadAnimations();
+  }
+
+  /**
+   * Sets the flip type from direction to left
+   */
+  public void setFlipTypeFromLeft()
+  {
+    if (flipType.equals("horizontal"))
+      flipTypeFrom = "left";
+    else flipTypeFrom = "back";
+    loadAnimations();
+  }
+
+  /**
+   * Sets the flip type from direction to front
+   */
+  public void setFlipTypeFromFront()
+  {
+    if (flipType.equals("vertical"))
+      flipTypeFrom = "front";
+    else flipTypeFrom = "right";
+    loadAnimations();
+  }
+
+  /**
+   * Sets the flip type from direction to back
+   */
+  public void setFlipTypeFromBack()
+  {
+    if (flipType.equals("vertical"))
+      flipTypeFrom = "back";
+    else flipTypeFrom = "left";
+    loadAnimations();
+  }
+
+  /**
+   * Returns the flip type from direction. For horizontal, it will be either right or left and for vertical, it will be front or back.
+   */
+  public String getFlipTypeFrom()
+  {
+    return flipTypeFrom;
+  }
+
+  /**
    * The Flip Animation Listener for animations and flipping complete listeners
    */
   public interface OnFlipAnimationListener {

@@ -44,5 +44,13 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
                 "Flip Completed! New Side is: " + newCurrentSide, Toast.LENGTH_LONG).show();
       }
     });
+
+
+
+    final EasyFlipView easyFlipView2 = (EasyFlipView) findViewById(R.id.easyFlipView2);
+    easyFlipView2.setToHorizontalType();
+    easyFlipView2.setFlipTypeFromLeft();
+
+
   }
 }
