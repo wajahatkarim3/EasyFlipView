@@ -25,7 +25,7 @@ Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/re
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.0'
+  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.1'
 }
 ```
 
@@ -35,7 +35,7 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 <dependency> 
   <groupId>com.wajahatkarim3.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>2.1.0</version>
+  <version>2.1.1</version>
   <type>pom</type> 
 </dependency>
 ```
@@ -159,6 +159,21 @@ mYourFlipView.setToHorizontalType();
 // Get/Set the FlipType to FlipType.Vertical
 boolean isVertical = mYourFlipView.isVerticalType();
 mYourFlipView.setToVerticalType();
+
+// Sets the animation direction from left (horizontal) and back (vertical)
+easyFlipView.setFlipTypeFromLeft();
+
+// Sets the animation direction from right (horizontal) and front (vertical)
+easyFlipView.setFlipTypeFromRight();
+
+// Sets the animation direction from front (vertical) and right (horizontal)
+easyFlipView.setFlipTypeFromFront();
+
+// Sets the animation direction from back (vertical) and left (horizontal)
+easyFlipView.setFlipTypeFromBack();
+
+// Returns the flip type from direction. For horizontal, it will be either right or left and for vertical, it will be front or back.
+easyFlipView.getFlipTypeFrom();
 
 ```
 
