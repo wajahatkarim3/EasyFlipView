@@ -194,6 +194,85 @@ easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
         });
 ```
 
+❌ Known Issues
+=============
+The `EasyFlipView` doesn't flip when used in `RecyclerView`. This is because the `EasyFlipView` uses the `onTouch()` method to intercept the touch events and flip the view accordingly. One easier solution is to disable the `flipOnTouch` attribute in XML by this.
+```xml
+app:flipOnTouch="false"
+```
+Now, your `RecyclerView` will scroll but the `EasyFlipView` will not flip or animate on touch etc. You will have to manually flip the view by calling the method `mYourFlipView.flipTheView()` inside the adapter or `ViewHolder` class of the `RecyclerView`. For example,
+```java
+public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
+
+    private List<Object> mData;
+    private LayoutInflater mInflater;
+    private ItemClickListener mClickListener;
+
+    // data is passed into the constructor
+    MyRecyclerViewAdapter(Context context, List<Object> data) {
+        this.mInflater = LayoutInflater.from(context);
+        this.mData = data;
+    }
+
+    // inflates the row layout from xml when needed
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = mInflater.inflate(R.layout.recyclerview_row, parent, false);
+        return new ViewHolder(view);
+    }
+
+    // binds the data to the TextView in each row
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        String textData = (String) mData.get(position);
+        holder.myTextView.setText(textData);
+    }
+
+    // total number of rows
+    @Override
+    public int getItemCount() {
+        return mData.size();
+    }
+
+
+    // stores and recycles views as they are scrolled off screen
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView myTextView;
+	EasyFlipView myEasyFlipView;
+
+        ViewHolder(View itemView) {
+            super(itemView);
+            myTextView = itemView.findViewById(R.id.tvAnimalName);
+	    myEasyFlipView = itemView.findViewById(R.id.myEasyFlipView);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+	    myEasyFlipView.flipTheView();
+            if (mClickListener != null) {
+	    	mClickListener.onItemClick(view, getAdapterPosition());
+	    }
+        }
+    }
+
+    // convenience method for getting data at click position
+    String getItem(int id) {
+        return mData.get(id);
+    }
+
+    // allows clicks events to be caught
+    void setClickListener(ItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
+    }
+
+    // parent activity will implement this method to respond to click events
+    public interface ItemClickListener {
+        void onItemClick(View view, int position);
+    }
+}
+```
+
 💰 Donations
 =============
 
