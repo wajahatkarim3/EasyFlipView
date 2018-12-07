@@ -30,7 +30,7 @@ public class EasyFlipView extends FrameLayout {
     public static final String TAG = EasyFlipView.class.getSimpleName();
 
     public static final int DEFAULT_FLIP_DURATION = 400;
-    public static final int DEFAULT_AUTO_FLIP_BACK_TIME = 100;
+    public static final int DEFAULT_AUTO_FLIP_BACK_TIME = 1000;
     private int animFlipHorizontalOutId = R.animator.animation_horizontal_flip_out;
     private int animFlipHorizontalInId = R.animator.animation_horizontal_flip_in;
     private int animFlipHorizontalRightOutId = R.animator.animation_horizontal_right_out;

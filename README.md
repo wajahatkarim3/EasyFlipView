@@ -25,7 +25,7 @@ Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/re
 Add this in your app's build.gradle file:
 ```groovy
 dependencies {
-  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.1'
+  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
 }
 ```
 
@@ -35,7 +35,7 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 <dependency> 
   <groupId>com.wajahatkarim3.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>2.1.1</version>
+  <version>2.1.2</version>
   <type>pom</type> 
 </dependency>
 ```
@@ -54,6 +54,8 @@ EasyFlipView In XML layouts("Vertical")
 	app:flipDuration="400"
 	app:flipType="vertical"
 	app:flipFrom="front"
+	app:autoFlipBack="true"
+	app:autoFlipBackTime="1000"
 	>
 
 	<!-- Back Layout Goes Here -->
@@ -75,6 +77,7 @@ EasyFlipView In XML layouts("Horizontal")
 	app:flipDuration="400"
 	app:flipFrom="right"
 	app:flipType="horizontal"
+	app:autoFlipBack="false"
 	>
 
 	<!-- Back Layout Goes Here -->
@@ -124,6 +127,16 @@ All customizable attributes for EasyFlipView
         		front</td>
                     <td>Whether card should flip from left to right Or right to left(Horizontal type) or car should flip to front or back(Vertical type)</td>
                 </tr>
+     <tr>
+        <td>app:autoFlipBack="true"</td>
+        <td>false</td>
+        <td>If this is set to true, then he card will be flipped back to original front side after the time set in <i>autoFlipBackTime</i>.</td>
+     </tr>  
+     <tr>
+             <td>app:autoFlipBackTime="1000"</td>
+             <td>1000</td>
+             <td>The time in milliseconds (ms), after the card will be flipped back to original front side.</td>
+          </tr> 
     </table>
 
 In Code (Java)
@@ -159,6 +172,14 @@ mYourFlipView.setToHorizontalType();
 // Get/Set the FlipType to FlipType.Vertical
 boolean isVertical = mYourFlipView.isVerticalType();
 mYourFlipView.setToVerticalType();
+
+// Get/Set if the auto flip back is enabled
+boolean isAutoFlipBackEnabled = mYourFlipView.isAutoFlipBack();
+mYourFlipView.setAutoFlipBack(true);
+
+// Get/Set the time in milliseconds (ms) after the view is auto flip back to original front side
+int autoflipBackTimeInMilliseconds = mYourFlipView.getAutoFlipBackTime();
+mYourFlipView.setAutoFlipBackTime(2000);
 
 // Sets the animation direction from left (horizontal) and back (vertical)
 easyFlipView.setFlipTypeFromLeft();
