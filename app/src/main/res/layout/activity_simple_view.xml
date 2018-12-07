@@ -23,6 +23,8 @@
       app:flipFrom="back"
       app:flipOnTouch="false"
       app:flipType="vertical"
+      app:autoFlipBack="false"
+      app:autoFlipBackTime="1000"
       >
 
     <ImageView
@@ -55,6 +57,8 @@
       app:flipFrom="left"
       app:flipOnTouch="true"
       app:flipType="horizontal"
+      app:autoFlipBack="true"
+      app:autoFlipBackTime="500"
       >
 
     <include layout="@layout/flash_card_layout_back"/>

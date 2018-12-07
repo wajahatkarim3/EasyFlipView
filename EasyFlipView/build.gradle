@@ -21,7 +21,7 @@ ext {
     siteUrl = 'https://github.com/wajahatkarim3/EasyFlipView'
     gitUrl = 'https://github.com/wajahatkarim3/EasyFlipView.git'
 
-    libraryVersion = '2.1.0'
+    libraryVersion = '2.1.1'
 
     developerId = 'wajahatkarim3'
     developerName = 'Wajahat Karim'

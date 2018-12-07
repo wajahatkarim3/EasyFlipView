@@ -7,6 +7,8 @@
         <attr name="flipFrom" format="string"/>
         <attr name="flipEnabled" format="boolean"/>
         <attr name="flipOnceEnabled" format="boolean"/>
+        <attr name="autoFlipBack" format="boolean"/>
+        <attr name="autoFlipBackTime" format="integer"/>
         <attr name="animFlipInId" format="reference"/>
         <attr name="animFlipOutId" format="reference"/>
     </declare-styleable>

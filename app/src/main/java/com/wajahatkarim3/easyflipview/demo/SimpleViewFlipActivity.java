@@ -48,8 +48,8 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
 
 
     final EasyFlipView easyFlipView2 = (EasyFlipView) findViewById(R.id.easyFlipView2);
-    easyFlipView2.setToHorizontalType();
-    easyFlipView2.setFlipTypeFromLeft();
+    easyFlipView2.setToVerticalType();
+    easyFlipView2.setFlipTypeFromBack();
 
 
   }
