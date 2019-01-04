@@ -298,6 +298,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 }
 ```
+___
+
+The `EasyFlipView` has a strange behaviour when the back and front layouts are a `CardView`. To workaround it, wrap your `CardView` in a `FrameLayout` or other `ViewGroup`.
 
 💰 Donations
 =============
