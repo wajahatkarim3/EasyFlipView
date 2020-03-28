@@ -1,7 +1,7 @@
 package com.wajahatkarim3.easyflipview.demo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 import com.wajahatkarim3.easyflipview.EasyFlipView;
@@ -18,7 +18,7 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
     setContentView(R.layout.activity_simple_view);
 
     final EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyFlipView);
-    easyFlipView.setFlipDuration(1000);
+    easyFlipView.setFlipDuration(10000);
     easyFlipView.setFlipEnabled(true);
 
     findViewById(R.id.imgFrontCard).setOnClickListener(new View.OnClickListener() {
@@ -48,8 +48,9 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
 
 
     final EasyFlipView easyFlipView2 = (EasyFlipView) findViewById(R.id.easyFlipView2);
-    easyFlipView2.setToVerticalType();
-    easyFlipView2.setFlipTypeFromBack();
+    easyFlipView2.setFlipDuration(10000);
+    easyFlipView2.setToHorizontalType();
+    easyFlipView2.setFlipTypeFromLeft();
 
 
   }

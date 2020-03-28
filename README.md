@@ -27,10 +27,10 @@ Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/re
 
 💻 Installation
 ============
-Add this in your app's build.gradle file:
+Add this in your app's `build.gradle` file:
 ```groovy
 dependencies {
-  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
+  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:3.0.0'
 }
 ```
 
@@ -40,7 +40,7 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 <dependency> 
   <groupId>com.wajahatkarim3.EasyFlipView</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>2.1.2</version>
+  <version>3.0.0</version>
   <type>pom</type> 
 </dependency>
 ```
@@ -334,6 +334,10 @@ Wajahat Karim
 - [**iGio90**](https://github.com/iGio90) for adding dynamic views support [Pull Request # 10](https://github.com/wajahatkarim3/EasyFlipView/pull/10)
 - [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding vertical animations support [Pull Request # 12](https://github.com/wajahatkarim3/EasyFlipView/pull/12)
 - [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding multi-dimension animations support [Pull Request # 23](https://github.com/wajahatkarim3/EasyFlipView/pull/23)
+- [**Sachin Varma**](https://www.linkedin.com/in/sachin-varma-58b243118/) for adding multi-dimension animations support [Pull Request # 23](https://github.com/wajahatkarim3/EasyFlipView/pull/23)
+- [**Daniel Luque**](https://github.com/DrankoLQ) for updating the `targetSdk` to 28 [Pull Request # 30](https://github.com/wajahatkarim3/EasyFlipView/pull/30)
+- [**Aditya Zope**](https://github.com/adzo261) for adding the feature to flip card only once. [Pull Request # 33](https://github.com/wajahatkarim3/EasyFlipView/pull/33)
+- [**Bruno Correia**](https://github.com/bffcorreia) for removing `<application>` tag from `AndroidManifest.xml`. [Pull Request # 38](https://github.com/wajahatkarim3/EasyFlipView/pull/38) and fixing the card animation glitch issue [Pull Request # 39](https://github.com/wajahatkarim3/EasyFlipView/pull/39)
 
 
 # 👍 How to Contribute

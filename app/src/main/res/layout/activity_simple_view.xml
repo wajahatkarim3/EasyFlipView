@@ -67,4 +67,38 @@
 
   </com.wajahatkarim3.easyflipview.EasyFlipView>
 
+  <com.wajahatkarim3.easyflipview.EasyFlipView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      app:flipDuration="10000"
+      app:flipEnabled="true"
+      app:flipFrom="left"
+      app:flipOnTouch="true"
+      app:flipType="horizontal">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="150dp"
+          android:background="@color/colorPrimary"
+          android:text="Back"
+          android:textColor="#FFF"
+          android:gravity="center"
+          android:textSize="20sp"/>
+
+      <TextView
+          android:layout_width="200dp"
+          android:layout_height="100dp"
+          android:text="Front"
+          android:background="@color/colorRed"
+          android:textColor="#FFF"
+          android:gravity="center" />
+
+  </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"></EditText>
+
 </LinearLayout>

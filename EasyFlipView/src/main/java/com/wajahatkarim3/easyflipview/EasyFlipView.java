@@ -23,7 +23,7 @@ import android.widget.FrameLayout;
  * For more information, check http://github.com/wajahatkarim3/EasyFlipView
  *
  * @author Wajahat Karim (http://wajahatkarim.com)
- * @version 1.0.1 01/11/2017
+ * @version 3.0.0 28/03/2019
  */
 public class EasyFlipView extends FrameLayout {
 
@@ -132,6 +132,7 @@ public class EasyFlipView extends FrameLayout {
 
         findViews();
         changeCameraDistance();
+        setupInitializations();
     }
 
     @Override
@@ -190,6 +191,11 @@ public class EasyFlipView extends FrameLayout {
                 mCardBackLayout.setVisibility(GONE);
             }
         }
+    }
+
+    private void setupInitializations()
+    {
+        mCardBackLayout.setVisibility(View.GONE);
     }
 
     private void loadAnimations() {
