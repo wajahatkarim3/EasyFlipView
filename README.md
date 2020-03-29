@@ -34,6 +34,8 @@ dependencies {
 }
 ```
 
+<img alt="New in the EasyFlipView" align="center" src="https://img.shields.io/badge/%F0%9F%93%84%20-NEW-red.svg" /> From the version `3.0.0`, this library will only support Android X naming artifacts. If you want to use the `android.support` versions, then use `2.1.2` version.
+
 Or add EasyFlipView as a new dependency inside your pom.xml
 
 ```xml
