@@ -8,12 +8,14 @@ import android.content.res.TypedArray;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import androidx.annotation.Nullable;
 import androidx.core.view.GestureDetectorCompat;
 
 
@@ -749,7 +751,10 @@ public class EasyFlipView extends FrameLayout {
 
         @Override
         public boolean onDown(MotionEvent e) {
-            return true;
+            if (isEnabled() && flipOnTouch) {
+                return true;
+            }
+            return super.onDown(e);
         }
     }
 }
