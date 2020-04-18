@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EasyFlipView/EasyFlipView.iml" filepath="$PROJECT_DIR$/EasyFlipView/EasyFlipView.iml" group="efv/EasyFlipView" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EasyFlipView/EasyFlipView-EasyFlipView.iml" filepath="$PROJECT_DIR$/.idea/modules/EasyFlipView/EasyFlipView-EasyFlipView.iml" group="EasyFlipView/EasyFlipView" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EasyFlipView-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EasyFlipView-app.iml" group="EasyFlipView/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GitHub-EasyFlipView.iml" filepath="$PROJECT_DIR$/.idea/modules/GitHub-EasyFlipView.iml" group="EasyFlipView" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="efv/app" />
       <module fileurl="file://$PROJECT_DIR$/efv.iml" filepath="$PROJECT_DIR$/efv.iml" group="efv" />
     </modules>

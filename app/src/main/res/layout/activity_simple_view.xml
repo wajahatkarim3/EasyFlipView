@@ -57,8 +57,7 @@
       app:flipFrom="left"
       app:flipOnTouch="true"
       app:flipType="horizontal"
-      app:autoFlipBack="true"
-      app:autoFlipBackTime="500"
+      app:autoFlipBack="false"
       >
 
     <include layout="@layout/flash_card_layout_back"/>

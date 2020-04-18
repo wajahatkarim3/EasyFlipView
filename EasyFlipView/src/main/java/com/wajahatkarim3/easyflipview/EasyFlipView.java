@@ -8,10 +8,13 @@ import android.content.res.TypedArray;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+
+import androidx.core.view.GestureDetectorCompat;
 
 
 /**
@@ -69,6 +72,8 @@ public class EasyFlipView extends FrameLayout {
     private FlipState mFlipState = FlipState.FRONT_SIDE;
 
     private OnFlipAnimationListener onFlipListener = null;
+
+    private GestureDetectorCompat gestureDetector;
 
     public EasyFlipView(Context context) {
         super(context);
@@ -133,6 +138,7 @@ public class EasyFlipView extends FrameLayout {
         findViews();
         changeCameraDistance();
         setupInitializations();
+        initGestureDetector();
     }
 
     @Override
@@ -196,6 +202,10 @@ public class EasyFlipView extends FrameLayout {
     private void setupInitializations()
     {
         mCardBackLayout.setVisibility(View.GONE);
+    }
+
+    private void initGestureDetector() {
+        gestureDetector = new GestureDetectorCompat(this.context, new SwipeDetector());
     }
 
     private void loadAnimations() {
@@ -445,30 +455,17 @@ public class EasyFlipView extends FrameLayout {
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
-
-        if (isEnabled() && flipOnTouch) {
-            this.getParent().requestDisallowInterceptTouchEvent(true);
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    x1 = event.getX();
-                    y1 = event.getY();
-                    return true;
-                case MotionEvent.ACTION_UP:
-                    float x2 = event.getX();
-                    float y2 = event.getY();
-                    float dx = x2 - x1;
-                    float dy = y2 - y1;
-                    float MAX_CLICK_DISTANCE = 0.5f;
-                    if ((dx >= 0 && dx < MAX_CLICK_DISTANCE) && (dy >= 0 && dy < MAX_CLICK_DISTANCE)) {
-                        flipTheView();
-                    }
-                    return true;
-            }
-        } else {
-            return super.onTouchEvent(event);
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        try {
+            return gestureDetector.onTouchEvent(ev) || super.dispatchTouchEvent(ev);
+        } catch (Throwable throwable) {
+            throw new IllegalStateException("Error in dispatchTouchEvent: ", throwable);
         }
-        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return gestureDetector.onTouchEvent(event);
     }
 
     /**
@@ -733,5 +730,26 @@ public class EasyFlipView extends FrameLayout {
          *                       FlipState.FRONT_SIDE or FlipState.BACK_SIDE
          */
         void onViewFlipCompleted(EasyFlipView easyFlipView, FlipState newCurrentSide);
+    }
+
+    private class SwipeDetector extends GestureDetector.SimpleOnGestureListener {
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            return false;
+        }
+
+        @Override
+        public boolean onSingleTapConfirmed(MotionEvent e) {
+            if (isEnabled() && flipOnTouch) {
+                flipTheView();
+            }
+            return super.onSingleTapConfirmed(e);
+        }
+
+        @Override
+        public boolean onDown(MotionEvent e) {
+            return true;
+        }
     }
 }

@@ -18,7 +18,7 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
     setContentView(R.layout.activity_simple_view);
 
     final EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyFlipView);
-    easyFlipView.setFlipDuration(10000);
+    easyFlipView.setFlipDuration(400);
     easyFlipView.setFlipEnabled(true);
 
     findViewById(R.id.imgFrontCard).setOnClickListener(new View.OnClickListener() {
@@ -48,7 +48,7 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
 
 
     final EasyFlipView easyFlipView2 = (EasyFlipView) findViewById(R.id.easyFlipView2);
-    easyFlipView2.setFlipDuration(10000);
+    easyFlipView2.setFlipDuration(400);
     easyFlipView2.setToHorizontalType();
     easyFlipView2.setFlipTypeFromLeft();
 
