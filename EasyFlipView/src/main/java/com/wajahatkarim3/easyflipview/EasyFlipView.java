@@ -467,7 +467,11 @@ public class EasyFlipView extends FrameLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return gestureDetector.onTouchEvent(event);
+        if (isEnabled() && flipOnTouch) {
+            return gestureDetector.onTouchEvent(event);
+        } else {
+            return super.onTouchEvent(event);
+        }
     }
 
     /**
