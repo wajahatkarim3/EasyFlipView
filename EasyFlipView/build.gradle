@@ -2,38 +2,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-/* This is for the jCenter
-ext {
-
-    //PUBLISH_GROUP_ID = 'com.wajahatkarim3.EasyFlipView'
-    //PUBLISH_ARTIFACT_ID = 'EasyFlipView'
-    //PUBLISH_VERSION = '3.0.0'
-
-
-    bintrayRepo = "EasyFlipView"
-    bintrayName = "com.wajahatkarim3.EasyFlipView"
-
-    publishedGroupId = 'com.wajahatkarim3.EasyFlipView'
-    libraryName = 'EasyFlipView'
-    artifact = 'EasyFlipView'
-
-    libraryDescription = 'A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.'
-
-    siteUrl = 'https://github.com/wajahatkarim3/EasyFlipView'
-    gitUrl = 'https://github.com/wajahatkarim3/EasyFlipView.git'
-
-    libraryVersion = '3.0.0'
-
-    developerId = 'wajahatkarim3'
-    developerName = 'Wajahat Karim'
-    developerEmail = 'wajahatkarim3@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-*/
-
 // Publishing for MavenCentral
 ext {
     PUBLISH_GROUP_ID = 'com.wajahatkarim'
@@ -74,20 +42,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     testImplementation 'junit:junit:4.12'
 }
-
-// or use the remote copy to keep update with latest changes
-//apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
-
-//apply from: 'android-release-aar.gradle'
-//apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
-
-//Add these lines to publish library to bintray. This is the readymade scripts made by github user nuuneoi to make uploading to bintray easy.
-//Place it at the end of the file
-/*if (project.rootProject.file('local.properties').exists()) {
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
-}
-*/
 
 // This is for publishing at Maven Central
 apply from: "${rootProject.projectDir}/scripts/publish-mavencentral.gradle"
