@@ -1,35 +1,19 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    /*
-    PUBLISH_GROUP_ID = 'com.wajahatkarim3.EasyFlipView'
+    PUBLISH_GROUP_ID = 'com.wajahatkarim'
     PUBLISH_ARTIFACT_ID = 'EasyFlipView'
-    PUBLISH_VERSION = '3.0.0'
-    */
-
-    bintrayRepo = "EasyFlipView"
-    bintrayName = "com.wajahatkarim3.EasyFlipView"
-
-    publishedGroupId = 'com.wajahatkarim3.EasyFlipView'
-    libraryName = 'EasyFlipView'
-    artifact = 'EasyFlipView'
-
-    libraryDescription = 'A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.'
-
-    siteUrl = 'https://github.com/wajahatkarim3/EasyFlipView'
-    gitUrl = 'https://github.com/wajahatkarim3/EasyFlipView.git'
-
-    libraryVersion = '3.0.0'
-
-    developerId = 'wajahatkarim3'
-    developerName = 'Wajahat Karim'
-    developerEmail = 'wajahatkarim3@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    PUBLISH_VERSION = '3.0.3'
+    PUBLISH_DESCRIPTION = 'A quick and easy flip view through which you can create views with two sides like credit cards, poker cards etc.'
+    PUBLISH_URL = 'https://github.com/wajahatkarim3/EasyFlipView'
+    PUBLISH_LICENSE_NAME = 'Apache License'
+    PUBLISH_LICENSE_URL = 'https://github.com/wajahatkarim3/EasyFlipView/blob/master/LICENSE'
+    PUBLISH_DEVELOPER_ID = 'wajahatkarim'
+    PUBLISH_DEVELOPER_NAME = 'Wajahat Karim'
+    PUBLISH_DEVELOPER_EMAIL = 'wajahatkarim3@mail.com'
+    PUBLISH_SCM_CONNECTION = 'scm:git:github.com/wajahatkarim3/EasyFlipView.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/wajahatkarim3/EasyFlipView.git'
+    PUBLISH_SCM_URL = 'https://github.com/wajahatkarim3/EasyFlipView/tree/master'
 }
 
 android {
@@ -66,15 +50,4 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-// or use the remote copy to keep update with latest changes
-//apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
-
-//apply from: 'android-release-aar.gradle'
-//apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
-
-//Add these lines to publish library to bintray. This is the readymade scripts made by github user nuuneoi to make uploading to bintray easy.
-//Place it at the end of the file
-if (project.rootProject.file('local.properties').exists()) {
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
-}
+apply from: "${rootDir}/scripts/publish-module.gradle"
