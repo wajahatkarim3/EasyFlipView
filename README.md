@@ -30,7 +30,7 @@ Changes exist in the [releases](https://github.com/wajahatkarim3/EasyFlipView/re
 Add this in your app's `build.gradle` file:
 ```groovy
 dependencies {
-  implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:3.0.0'
+  implementation 'com.wajahatkarim:EasyFlipView:3.0.3'
 }
 ```
 
@@ -40,9 +40,9 @@ Or add EasyFlipView as a new dependency inside your pom.xml
 
 ```xml
 <dependency> 
-  <groupId>com.wajahatkarim3.EasyFlipView</groupId>
+  <groupId>com.wajahatkarim</groupId>
   <artifactId>EasyFlipView</artifactId> 
-  <version>3.0.0</version>
+  <version>3.0.3</version>
   <type>pom</type> 
 </dependency>
 ```
