@@ -224,6 +224,15 @@ easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
 
 ❌ Known Issues
 =============
+
+## Clipping when rotation animation is running
+
+To avoid clipping of top/bottom while flipping the view, you can disable it through XML like this
+
+Add `android:clipChildren="false"` to the parent/root view of `EasyFlipView` component. And add `android:clipToPadding="false"` to the `EasyFlipView` itself. Special thanks to @ueen for this fix #64
+
+
+## EasyFlipView in RecyclerViews
 The `EasyFlipView` doesn't flip when used in `RecyclerView`. This is because the `EasyFlipView` uses the `onTouch()` method to intercept the touch events and flip the view accordingly. One easier solution is to disable the `flipOnTouch` attribute in XML by this.
 ```xml
 app:flipOnTouch="false"
